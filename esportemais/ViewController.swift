@@ -22,7 +22,18 @@ class ViewController: UIViewController {
 
 
     @IBAction func login(_ sender: Any) {
-        
+        Auth.auth().signIn(withEmail: vUsuario.text!, password: vSenha.text!) { (result, error) in
+            
+            guard let user = result?.user
+                else {
+                    print(error)
+                    
+                    return
+            }
+            Analytics.setUserProperty("sim", forName: "entrou")
+            Analytics.logEvent("signed", parameters: ["nome": self.vUsuario.text!])
+            print("logo")
+        }
     }
     
     
