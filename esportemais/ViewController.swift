@@ -7,14 +7,40 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var vUsuario: UITextField!
+     @IBOutlet weak var vSenha: UITextField!
+    
     override func viewDidLoad() {
+       
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
 
+    @IBAction func login(_ sender: Any) {
+        
+    }
+    
+    
+    @IBAction func novoUsuario(_ sender: Any) {
+        
+        
+        Auth.auth().createUser(withEmail: vUsuario.text!, password: vSenha.text!) { (result, error) in
+            
+            guard let user = result?.user
+                else {
+                    print(error)
+                    return
+            }
+            
+            print("sucesso")
+        }
+       
+        
+    }
 }
 
