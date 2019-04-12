@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1339D63F2261452B00236AA3 /* EventosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1339D63E2261452B00236AA3 /* EventosTableViewController.swift */; };
 		13D24A48225E9C5700C45678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D24A47225E9C5700C45678 /* AppDelegate.swift */; };
 		13D24A4A225E9C5700C45678 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D24A49225E9C5700C45678 /* ViewController.swift */; };
 		13D24A4D225E9C5700C45678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D24A4B225E9C5700C45678 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		0CC5E915EA19B4F5E15C82AF /* Pods-esportemais.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esportemais.release.xcconfig"; path = "Target Support Files/Pods-esportemais/Pods-esportemais.release.xcconfig"; sourceTree = "<group>"; };
+		1339D63E2261452B00236AA3 /* EventosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosTableViewController.swift; sourceTree = "<group>"; };
 		13D24A44225E9C5700C45678 /* esportemais.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = esportemais.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D24A47225E9C5700C45678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13D24A49225E9C5700C45678 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +44,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1339D641226145D800236AA3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13D24A4B225E9C5700C45678 /* Main.storyboard */,
+				13D24A50225E9C5800C45678 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1339D642226145F700236AA3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1339D6432261460000236AA3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				13D24A47225E9C5700C45678 /* AppDelegate.swift */,
+				13D24A49225E9C5700C45678 /* ViewController.swift */,
+				1339D63E2261452B00236AA3 /* EventosTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		13D24A3B225E9C5700C45678 = {
 			isa = PBXGroup;
 			children = (
@@ -64,11 +92,10 @@
 		13D24A46225E9C5700C45678 /* esportemais */ = {
 			isa = PBXGroup;
 			children = (
-				13D24A47225E9C5700C45678 /* AppDelegate.swift */,
-				13D24A49225E9C5700C45678 /* ViewController.swift */,
-				13D24A4B225E9C5700C45678 /* Main.storyboard */,
+				1339D6432261460000236AA3 /* Controller */,
+				1339D642226145F700236AA3 /* Model */,
+				1339D641226145D800236AA3 /* View */,
 				13D24A4E225E9C5800C45678 /* Assets.xcassets */,
-				13D24A50225E9C5800C45678 /* LaunchScreen.storyboard */,
 				13D24A53225E9C5800C45678 /* Info.plist */,
 			);
 			path = esportemais;
@@ -218,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1339D63F2261452B00236AA3 /* EventosTableViewController.swift in Sources */,
 				13D24A4A225E9C5700C45678 /* ViewController.swift in Sources */,
 				13D24A48225E9C5700C45678 /* AppDelegate.swift in Sources */,
 			);
