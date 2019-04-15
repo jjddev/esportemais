@@ -33,11 +33,12 @@ class ViewController: UIViewController {
                     
                     print("codigo",e!.rawValue)
                     
-                    var ab = AlertBuilder()
+                    //var ab = AlertBuilder()
                     
-                    let ok = UIAlertAction(title: "Fechar", style: .default, handler: nil)
-                    let alert = ab.setTitle("Falha").setMessage(FireBaseErrors.codes[errorCode]!).addButton(ok).build()
+                    //let ok = UIAlertAction(title: "Fechar", style: .default, handler: nil)
+                    //let alert = ab.setTitle("Falha").setMessage(FireBaseErrors.codes[errorCode]!).addButton(ok).build()
                     
+                    let alert = FactoryAlert.infoDialog(title: "Falha", messaage: FireBaseErrors.codes[errorCode]!, buttonText: "OK")
                     self.present(alert, animated: true)
                     
                     //self.modal("Falha", FireBaseErrors.codes[errorCode]!)
