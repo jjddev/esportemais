@@ -27,28 +27,17 @@ class ViewController: UIViewController {
             guard let user = result?.user
                 else {
         
-                    
                     let e = AuthErrorCode(rawValue: error!._code)
                     let errorCode = e?.rawValue ?? 0
-                    
-                    print("codigo",e!.rawValue)
-                    
-                    //var ab = AlertBuilder()
-                    
-                    //let ok = UIAlertAction(title: "Fechar", style: .default, handler: nil)
-                    //let alert = ab.setTitle("Falha").setMessage(FireBaseErrors.codes[errorCode]!).addButton(ok).build()
-                    
                     let alert = FactoryAlert.infoDialog(title: "Falha", messaage: FireBaseErrors.codes[errorCode]!, buttonText: "OK")
                     self.present(alert, animated: true)
-                    
-                    //self.modal("Falha", FireBaseErrors.codes[errorCode]!)
                     print(error)
                     
                     return
             }
+            
             Analytics.setUserProperty("sim", forName: "entrou")
             Analytics.logEvent("signed", parameters: ["nome": self.vUsuario.text!])
-            print("logo")
         }
     }
     

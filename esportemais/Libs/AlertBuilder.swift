@@ -28,7 +28,7 @@ class AlertBuilder {
     }
     
     func addButton(_ button: UIAlertAction) -> AlertBuilder {
-        alert.addAction(button)
+        alert.addAction(button) 
         return self
     }
     
