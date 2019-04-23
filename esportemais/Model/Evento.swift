@@ -9,12 +9,10 @@
 import Foundation
 
 class Evento {
-    var id: Int
-    var nome: String
-    var data: Date
+    var id: Int = 0
+    var nome: String = ""
+    //var data: Date
     
     
-    init(){
-        
-    }
+
 }

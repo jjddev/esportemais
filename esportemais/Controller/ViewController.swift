@@ -9,14 +9,37 @@
 import UIKit
 import Firebase
 
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var vUsuario: UITextField!
-     @IBOutlet weak var vSenha: UITextField!
+    @IBOutlet weak var vSenha: UITextField!
+    
+    var ref: DatabaseReference!
+    
+    
     
     override func viewDidLoad() {
        
         super.viewDidLoad()
+        
+        ref = Database.database().reference()
+        
+        let id = "3"
+        
+        ref.child("teste").child(id).observeSingleEvent(of: .value, with: { (snapshot) in
+
+            let value = snapshot.value as? NSDictionary
+            let nome = value?["nome"] as? String ?? ""
+
+            print(nome)
+            
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

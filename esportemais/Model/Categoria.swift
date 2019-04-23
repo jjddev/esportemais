@@ -9,11 +9,8 @@
 import Foundation
 
 class Categoria {
-    var id: Int
-    var descricao: String
+    var id: Int = 0
+    var descricao: String = ""
     
-    init(){
-        
-    }
-    
+
 }
