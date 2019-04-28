@@ -27,12 +27,18 @@ class ViewController: UIViewController {
         
         let id = "3"
         
+        let m = ref.child("Modalidades").childByAutoId().key as! String
+       
+        //let mod = ["id": m, "descricao": "Futebol"]
+        
+        //ref.child("Modalidades").setValue(mod)
+        
         ref.child("teste").child(id).observeSingleEvent(of: .value, with: { (snapshot) in
-
+            
             let value = snapshot.value as? NSDictionary
             let nome = value?["nome"] as? String ?? ""
 
-            print(nome)
+           // print(nome)
             
             // ...
         }) { (error) in

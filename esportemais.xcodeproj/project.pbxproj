@@ -20,6 +20,7 @@
 		13D24A52225E9C5800C45678 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D24A50225E9C5800C45678 /* LaunchScreen.storyboard */; };
 		13D24A88225EB45C00C45678 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13D24A87225EB45C00C45678 /* GoogleService-Info.plist */; };
 		16B387D322762E8500D0B9C9 /* logo-escola-de-esportes2.png in Resources */ = {isa = PBXBuildFile; fileRef = 16B387D222762E8500D0B9C9 /* logo-escola-de-esportes2.png */; };
+		16FFE1012276427A00870327 /* SeederModalidades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE1002276427A00870327 /* SeederModalidades.swift */; };
 		DF2778BFF48458B537A6E1DF /* Pods_esportemais.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B94AE64058DE901CE45A7B2 /* Pods_esportemais.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		13D24A53225E9C5800C45678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13D24A87225EB45C00C45678 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		16B387D222762E8500D0B9C9 /* logo-escola-de-esportes2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-escola-de-esportes2.png"; sourceTree = "<group>"; };
+		16FFE1002276427A00870327 /* SeederModalidades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeederModalidades.swift; sourceTree = "<group>"; };
 		2B94AE64058DE901CE45A7B2 /* Pods_esportemais.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_esportemais.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98981152D9B1842C693C11EC /* Pods-esportemais.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esportemais.debug.xcconfig"; path = "Target Support Files/Pods-esportemais/Pods-esportemais.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 		13D24A46225E9C5700C45678 /* esportemais */ = {
 			isa = PBXGroup;
 			children = (
+				16FFE0FF2276425A00870327 /* Seeders */,
 				1339D64622615F2600236AA3 /* Libs */,
 				1339D6432261460000236AA3 /* Controller */,
 				1339D642226145F700236AA3 /* Model */,
@@ -125,6 +128,14 @@
 				13D24A53225E9C5800C45678 /* Info.plist */,
 			);
 			path = esportemais;
+			sourceTree = "<group>";
+		};
+		16FFE0FF2276425A00870327 /* Seeders */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE1002276427A00870327 /* SeederModalidades.swift */,
+			);
+			path = Seeders;
 			sourceTree = "<group>";
 		};
 		673B7EF1AC021E751FA42BC2 /* Frameworks */ = {
@@ -279,6 +290,7 @@
 				1339D64822615F3B00236AA3 /* AlertBuilder.swift in Sources */,
 				1339D6452261578900236AA3 /* FireBaseErrors.swift in Sources */,
 				1391988422653ED400E37901 /* FactoryAlert.swift in Sources */,
+				16FFE1012276427A00870327 /* SeederModalidades.swift in Sources */,
 				13D24A4A225E9C5700C45678 /* ViewController.swift in Sources */,
 				13972272226E7206009F275D /* Evento.swift in Sources */,
 				13D24A48225E9C5700C45678 /* AppDelegate.swift in Sources */,

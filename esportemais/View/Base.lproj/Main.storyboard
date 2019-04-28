@@ -163,6 +163,7 @@
                                         <date key="date" timeIntervalSinceReferenceDate="576799889.396258">
                                             <!--2019-04-12 22:11:29 +0000-->
                                         </date>
+                                        <locale key="locale" localeIdentifier="pt_BR"/>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMd-3N-sAU">
                                         <rect key="frame" x="0.0" y="0.0" width="36" height="21"/>
