@@ -9,9 +9,14 @@
 import Foundation
 
 class Evento {
-    var id: Int = 0
-    var nome: String = ""
-    //var data: Date
+    var id  = ""
+    var nome  = ""
+    var data  = Date()
+    var vagas = 30
+    var observacoes = ""
+    
+    
+    
     
     
 

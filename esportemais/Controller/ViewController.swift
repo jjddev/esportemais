@@ -23,15 +23,27 @@ class ViewController: UIViewController {
        
         super.viewDidLoad()
         
+        
+        let d = Date()
+        
+        var df  = DateFormatter()
+        
+        df.dateFormat = "dd/MM/Y HH:mm:ss"
+        
+        print("aaaaaaaaaa")
+        
+        print(df.string(from: d))
+        
+        //let u = Usuario()
+        //u.setupProperties()
+        
+        
         ref = Database.database().reference()
         
         let id = "3"
         
         let m = ref.child("Modalidades").childByAutoId().key as! String
        
-        //let mod = ["id": m, "descricao": "Futebol"]
-        
-        //ref.child("Modalidades").setValue(mod)
         
         ref.child("teste").child(id).observeSingleEvent(of: .value, with: { (snapshot) in
             
