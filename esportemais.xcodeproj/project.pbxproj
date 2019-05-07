@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130DA8532280E3FC00A27268 /* UsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130DA8522280E3FC00A27268 /* UsuarioViewController.swift */; };
 		1339D63F2261452B00236AA3 /* EventosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1339D63E2261452B00236AA3 /* EventosTableViewController.swift */; };
 		1339D6452261578900236AA3 /* FireBaseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1339D6442261578900236AA3 /* FireBaseErrors.swift */; };
 		1339D64822615F3B00236AA3 /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1339D64722615F3B00236AA3 /* AlertBuilder.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		0CC5E915EA19B4F5E15C82AF /* Pods-esportemais.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esportemais.release.xcconfig"; path = "Target Support Files/Pods-esportemais/Pods-esportemais.release.xcconfig"; sourceTree = "<group>"; };
+		130DA8522280E3FC00A27268 /* UsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioViewController.swift; sourceTree = "<group>"; };
 		1339D63E2261452B00236AA3 /* EventosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosTableViewController.swift; sourceTree = "<group>"; };
 		1339D6442261578900236AA3 /* FireBaseErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseErrors.swift; sourceTree = "<group>"; };
 		1339D64722615F3B00236AA3 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				13D24A47225E9C5700C45678 /* AppDelegate.swift */,
 				13D24A49225E9C5700C45678 /* ViewController.swift */,
 				1339D63E2261452B00236AA3 /* EventosTableViewController.swift */,
+				130DA8522280E3FC00A27268 /* UsuarioViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,7 +172,7 @@
 				13D24A40225E9C5700C45678 /* Sources */,
 				13D24A41225E9C5700C45678 /* Frameworks */,
 				13D24A42225E9C5700C45678 /* Resources */,
-				6871A51DA5F052AC4F981E5C /* [CP] Embed Pods Frameworks */,
+				EF787E977D87FEDB826EFDCC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -229,36 +232,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6871A51DA5F052AC4F981E5C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-esportemais/Pods-esportemais-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-esportemais/Pods-esportemais-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		765A751F14D2FD327D95B7B0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -281,6 +254,34 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EF787E977D87FEDB826EFDCC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-esportemais/Pods-esportemais-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-esportemais/Pods-esportemais-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -290,6 +291,7 @@
 			files = (
 				1339D63F2261452B00236AA3 /* EventosTableViewController.swift in Sources */,
 				13972274226E72C0009F275D /* Categoria.swift in Sources */,
+				130DA8532280E3FC00A27268 /* UsuarioViewController.swift in Sources */,
 				1339D64822615F3B00236AA3 /* AlertBuilder.swift in Sources */,
 				1339D6452261578900236AA3 /* FireBaseErrors.swift in Sources */,
 				1391988422653ED400E37901 /* FactoryAlert.swift in Sources */,
