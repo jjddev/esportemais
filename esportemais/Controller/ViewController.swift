@@ -38,6 +38,11 @@ class ViewController: UIViewController {
         //u.setupProperties()
         
         
+        Analytics.setUserProperty("sim", forName: "entrou")
+        Analytics.logEvent("signed", parameters: ["nome": self.vUsuario.text!])
+        Analytics.logEvent("novo", parameters: ["teste": "aquiiiiiiiii"])
+        
+        
         ref = Database.database().reference()
         
         let id = "3"

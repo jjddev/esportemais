@@ -66,7 +66,7 @@ class UsuarioViewController: UIViewController {
                         let descriptionError = FireBaseErrors.codes[errorCode] ?? "Erro desconhecido"
                         
                         print(error?.localizedDescription)
-                        Analytics.logEvent( "erro_desconhecido", parameters: ["msg": error?.localizedDescription])
+                        Analytics.logEvent("erro_desconhecido", parameters: ["msg": error?.localizedDescription])
                     
                         
                         let alert = FactoryAlert.infoDialog(title: "Falha", messaage: descriptionError , buttonText: "OK")
