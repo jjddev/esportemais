@@ -13,6 +13,7 @@ class UsuarioViewController: UIViewController {
     var usuario =  Usuario()
     var ref: DatabaseReference!
     var acaoStatus = (error: false, message: "123")
+    let ERRO_DESCONHECIDO = "Erro desconhecido"
     
     @IBOutlet weak var vNome: UITextField!
     @IBOutlet weak var vEmail: UITextField!
@@ -26,6 +27,8 @@ class UsuarioViewController: UIViewController {
         
         vNovaConta.layer.cornerRadius = 15
         vNovaConta.clipsToBounds = true
+        
+        ref = Database.database().reference()
         
     }
     
@@ -45,10 +48,7 @@ class UsuarioViewController: UIViewController {
             return false
         }
         
-        
-        
         return true
-        
     }
     
     @IBAction func salvar(_ sender: Any) {
@@ -63,16 +63,23 @@ class UsuarioViewController: UIViewController {
                         
                         let e = AuthErrorCode(rawValue: error!._code)
                         let errorCode = e?.rawValue ?? 0
-                        let descriptionError = FireBaseErrors.codes[errorCode] ?? "Erro desconhecido"
+                        let descriptionError = FireBaseErrors.codes[errorCode] ?? self.ERRO_DESCONHECIDO
                         
-                        print(error?.localizedDescription)
-                        Analytics.logEvent("erro_desconhecido", parameters: ["msg": error?.localizedDescription])
-                    
+                        if descriptionError == self.ERRO_DESCONHECIDO {
+                            print(error?.localizedDescription)
+                            Analytics.logEvent("erro_desconhecido", parameters: ["msg": error?.localizedDescription])
+                        }
                         
                         let alert = FactoryAlert.infoDialog(title: "Falha", messaage: descriptionError , buttonText: "OK")
                         self.present(alert, animated: true)
+                        
                         return
                 }
+                
+                
+                
+                let novo = ["nome": self.usuario.nome, "email" : self.usuario.email, "id": user.uid]
+                self.ref.child("Usuarios").child(user.uid).setValue(novo)
                 print("===== uid criado: \(user.uid)")
             }
         }

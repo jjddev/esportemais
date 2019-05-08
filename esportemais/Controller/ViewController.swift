@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         
         
         Analytics.setUserProperty("sim", forName: "entrou")
-        Analytics.logEvent("signed", parameters: ["nome": self.vUsuario.text!])
+        //Analytics.logEvent("signed", parameters: ["nome": self.vUsuario.text!])
         Analytics.logEvent("novo", parameters: ["teste": "aquiiiiiiiii"])
         
         
