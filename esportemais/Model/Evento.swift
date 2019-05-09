@@ -15,8 +15,20 @@ class Evento {
     var vagas = 30
     var observacoes = ""
     
-    
-    
+   
+    func isValid() -> (error: Bool, message: String){
+        
+        if nome.trimmingCharacters(in: .whitespaces).isEmpty {
+            return (true, "Nome inválido")
+        }
+        
+        if vagas <= 1 {
+            return (true, "Número de vagas inválido")
+        }
+        
+        
+        return (false, "ok")
+    }
     
     
 
