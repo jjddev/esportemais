@@ -14,6 +14,8 @@
 		1391988422653ED400E37901 /* FactoryAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391988322653ED400E37901 /* FactoryAlert.swift */; };
 		13972272226E7206009F275D /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13972271226E7206009F275D /* Evento.swift */; };
 		13972274226E72C0009F275D /* Categoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13972273226E72C0009F275D /* Categoria.swift */; };
+		13D07875228628EF0031B49B /* InteressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D07874228628EF0031B49B /* InteressesViewController.swift */; };
+		13D0787722862C590031B49B /* LocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D0787622862C590031B49B /* LocalViewController.swift */; };
 		13D24A48225E9C5700C45678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D24A47225E9C5700C45678 /* AppDelegate.swift */; };
 		13D24A4A225E9C5700C45678 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D24A49225E9C5700C45678 /* ViewController.swift */; };
 		13D24A4D225E9C5700C45678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D24A4B225E9C5700C45678 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 		1391988322653ED400E37901 /* FactoryAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryAlert.swift; sourceTree = "<group>"; };
 		13972271226E7206009F275D /* Evento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
 		13972273226E72C0009F275D /* Categoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categoria.swift; sourceTree = "<group>"; };
+		13D07874228628EF0031B49B /* InteressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteressesViewController.swift; sourceTree = "<group>"; };
+		13D0787622862C590031B49B /* LocalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalViewController.swift; sourceTree = "<group>"; };
 		13D24A44225E9C5700C45678 /* esportemais.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = esportemais.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D24A47225E9C5700C45678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13D24A49225E9C5700C45678 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				13D24A49225E9C5700C45678 /* ViewController.swift */,
 				1339D63E2261452B00236AA3 /* EventosTableViewController.swift */,
 				130DA8522280E3FC00A27268 /* UsuarioViewController.swift */,
+				13D07874228628EF0031B49B /* InteressesViewController.swift */,
+				13D0787622862C590031B49B /* LocalViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -296,7 +302,9 @@
 				130DA8532280E3FC00A27268 /* UsuarioViewController.swift in Sources */,
 				1339D64822615F3B00236AA3 /* AlertBuilder.swift in Sources */,
 				1339D6452261578900236AA3 /* FireBaseErrors.swift in Sources */,
+				13D07875228628EF0031B49B /* InteressesViewController.swift in Sources */,
 				1391988422653ED400E37901 /* FactoryAlert.swift in Sources */,
+				13D0787722862C590031B49B /* LocalViewController.swift in Sources */,
 				16FFE1012276427A00870327 /* SeederModalidades.swift in Sources */,
 				13D24A4A225E9C5700C45678 /* ViewController.swift in Sources */,
 				13972272226E7206009F275D /* Evento.swift in Sources */,
