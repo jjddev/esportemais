@@ -55,7 +55,8 @@ class UsuarioViewController: UIViewController {
         if !salvarUsuario() {
             let alert = FactoryAlert.infoDialog(title: "Falha", messaage: acaoStatus.message, buttonText: "OK")
             self.present(alert, animated: true)
-        }else{
+            
+        } else {
             Auth.auth().createUser(withEmail: usuario.email, password: usuario.senha) { (result, error) in
                 
                 guard let user = result?.user
@@ -76,13 +77,41 @@ class UsuarioViewController: UIViewController {
                         return
                 }
                 
-                
-                
                 let novo = ["nome": self.usuario.nome, "email" : self.usuario.email, "id": user.uid]
                 self.ref.child("Usuarios").child(user.uid).setValue(novo)
-                print("===== uid criado: \(user.uid)")
+                
+                print("===== uid criado: \(user.uid) =====")
+                
+                let alert = FactoryAlert.infoDialog(title: "Bem Vindo", messaage: "Conta criado com sucesso", buttonText: "OK")
+                //self.present(alert, animated: true)
+                
+                //self.shouldPerformSegue(withIdentifier: "eventos", sender: false)
+                
+                
+                let homeView = self.storyboard?.instantiateViewController(withIdentifier: "eventosController") as! EventosUIViewController
+                self.navigationController?.pushViewController(homeView, animated: true)
+                
+                
+                //let controller = self.storyboard!.instantiateViewController(withIdentifier: "eventosController")
+                //self.present(controller, animated: false, completion: nil)
+                //
+                
+                //self.navigationController?.pushViewController(UIViewController, animated: true)
+                //self.show(controller, sender: nil)
+                
             }
         }
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (sender != nil) == false {
+            print("should não vai")
+            print(sender)
+            return false
+        } else {
+            print(sender)
+            print("should  vai")
+            return true
+        }
+    }
 }

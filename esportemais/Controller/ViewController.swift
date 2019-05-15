@@ -76,6 +76,16 @@ class ViewController: UIViewController {
                     let e = AuthErrorCode(rawValue: error!._code)
                     let errorCode = e?.rawValue ?? 0
                     let alert = FactoryAlert.infoDialog(title: "Falha", messaage: FireBaseErrors.codes[errorCode]!, buttonText: "OK")
+                    alert.view.tintColor = UIColor.red
+                    
+                    let titFont = [ NSAttributedString.Key.foregroundColor : UIColor.red]
+
+                    
+                    let titAttrString = NSMutableAttributedString(string: "", attributes: titFont)
+
+                    
+                    alert.setValue(titAttrString, forKey: "attributedTitle")
+                    
                     self.present(alert, animated: true)
                     print(error)
                     
@@ -84,6 +94,7 @@ class ViewController: UIViewController {
             
             Analytics.setUserProperty("sim", forName: "entrou")
             Analytics.logEvent("signed", parameters: ["nome": self.vUsuario.text!])
+            
         }
     }
     
@@ -99,14 +110,24 @@ class ViewController: UIViewController {
                     return
             }
             
-            print("sucesso")
+            let alert = FactoryAlert.infoDialog(title: "Bem Vindo", messaage: "Conta criado com sucesso", buttonText: "OK")
+            self.present(alert, animated: true)
+            
+            
+            
+            //self.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: true)
         }
-       
+
+        
+        
+       // navigationController?.popToViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
         
     }
     
     func modal(_ titulo: String, _ mensagem: String){
         let alert = UIAlertController(title: titulo, message: mensagem, preferredStyle: .alert)
+        
+        alert.setValue(UIColor.blue, forKey: "titleTextColor")
         alert.addAction(UIAlertAction(title: "Fechar", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
