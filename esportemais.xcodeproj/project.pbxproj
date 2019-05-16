@@ -14,6 +14,8 @@
 		1391988422653ED400E37901 /* FactoryAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391988322653ED400E37901 /* FactoryAlert.swift */; };
 		13972272226E7206009F275D /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13972271226E7206009F275D /* Evento.swift */; };
 		13972274226E72C0009F275D /* Categoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13972273226E72C0009F275D /* Categoria.swift */; };
+		13CDAEFC228CD5D80065FB47 /* EventoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CDAEFA228CD5D80065FB47 /* EventoTableViewCell.swift */; };
+		13CDAEFD228CD5D80065FB47 /* EventoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13CDAEFB228CD5D80065FB47 /* EventoTableViewCell.xib */; };
 		13D07875228628EF0031B49B /* InteressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D07874228628EF0031B49B /* InteressesViewController.swift */; };
 		13D0787722862C590031B49B /* LocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D0787622862C590031B49B /* LocalViewController.swift */; };
 		13D24A48225E9C5700C45678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D24A47225E9C5700C45678 /* AppDelegate.swift */; };
@@ -38,6 +40,8 @@
 		1391988322653ED400E37901 /* FactoryAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryAlert.swift; sourceTree = "<group>"; };
 		13972271226E7206009F275D /* Evento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
 		13972273226E72C0009F275D /* Categoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categoria.swift; sourceTree = "<group>"; };
+		13CDAEFA228CD5D80065FB47 /* EventoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventoTableViewCell.swift; sourceTree = "<group>"; };
+		13CDAEFB228CD5D80065FB47 /* EventoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventoTableViewCell.xib; sourceTree = "<group>"; };
 		13D07874228628EF0031B49B /* InteressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteressesViewController.swift; sourceTree = "<group>"; };
 		13D0787622862C590031B49B /* LocalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalViewController.swift; sourceTree = "<group>"; };
 		13D24A44225E9C5700C45678 /* esportemais.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = esportemais.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +77,8 @@
 			children = (
 				16B387D222762E8500D0B9C9 /* logo-escola-de-esportes2.png */,
 				13D24A4B225E9C5700C45678 /* Main.storyboard */,
+				13CDAEFA228CD5D80065FB47 /* EventoTableViewCell.swift */,
+				13CDAEFB228CD5D80065FB47 /* EventoTableViewCell.xib */,
 				13D24A50225E9C5800C45678 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -234,6 +240,7 @@
 				13D24A88225EB45C00C45678 /* GoogleService-Info.plist in Resources */,
 				13D24A4F225E9C5800C45678 /* Assets.xcassets in Resources */,
 				16B387D322762E8500D0B9C9 /* logo-escola-de-esportes2.png in Resources */,
+				13CDAEFD228CD5D80065FB47 /* EventoTableViewCell.xib in Resources */,
 				13D24A4D225E9C5700C45678 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +309,7 @@
 			files = (
 				1339D63F2261452B00236AA3 /* EventosTableViewController.swift in Sources */,
 				13972274226E72C0009F275D /* Categoria.swift in Sources */,
+				13CDAEFC228CD5D80065FB47 /* EventoTableViewCell.swift in Sources */,
 				130DA8532280E3FC00A27268 /* UsuarioViewController.swift in Sources */,
 				1339D64822615F3B00236AA3 /* AlertBuilder.swift in Sources */,
 				1339D6452261578900236AA3 /* FireBaseErrors.swift in Sources */,

@@ -9,10 +9,23 @@
 import UIKit
 
 class EventosTableViewController: UITableViewController {
+    
+    func registerTableViewCells(){
+        let textFieldCell = UINib(nibName: "EventoTableViewCell", bundle: nil)
+        self.tableView.register(textFieldCell, forCellReuseIdentifier: "especial")
+        
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 300
+    }
 
+    let eventos = [1,2,3]
+    
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+        registerTableViewCells()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,23 +37,29 @@ class EventosTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return eventos.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return eventos.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "especial", for: indexPath) as! EventoTableViewCell
+        
+        let evento = eventos[indexPath.row]
+        
+        cell.nome.text = "=== nome \(evento) ==="
+        cell.data.text = "=== data \(evento) ==="
+        cell.local.text = "=== local \(evento) ==="
+        cell.modalidade.text = "=== mod \(evento) ==="
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
