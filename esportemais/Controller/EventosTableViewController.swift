@@ -15,17 +15,19 @@ class EventosTableViewController: UITableViewController {
         self.tableView.register(textFieldCell, forCellReuseIdentifier: "especial")
         
         
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 300
+
     }
 
-    let eventos = [1,2,3]
+    let eventos = [1]
     
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         registerTableViewCells()
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 300
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -48,7 +50,9 @@ class EventosTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "especial", for: indexPath) as! EventoTableViewCell
+        
+        
+       let cell = tableView.dequeueReusableCell(withIdentifier: "especial", for: indexPath) as! EventoTableViewCell
         
         let evento = eventos[indexPath.row]
         
@@ -56,6 +60,7 @@ class EventosTableViewController: UITableViewController {
         cell.data.text = "=== data \(evento) ==="
         cell.local.text = "=== local \(evento) ==="
         cell.modalidade.text = "=== mod \(evento) ==="
+ 
 
         return cell
     }
