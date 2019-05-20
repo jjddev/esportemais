@@ -18,7 +18,7 @@ class EventosTableViewController: UITableViewController {
 
     }
 
-    let eventos = [1]
+    let eventos = [1,2,3,4,5,6]
     
     
     override func viewDidLoad() {
@@ -26,8 +26,6 @@ class EventosTableViewController: UITableViewController {
         super.viewDidLoad()
         registerTableViewCells()
         
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 300
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -39,7 +37,7 @@ class EventosTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return eventos.count
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
