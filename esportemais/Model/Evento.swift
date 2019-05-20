@@ -8,12 +8,13 @@
 
 import Foundation
 
-class Evento {
+class Evento: Modelble {
     var id  = ""
     var nome  = ""
     var data  = Date()
     var vagas = 30
     var observacoes = ""
+    var organizador = ""
     
    
     func isValid() -> (error: Bool, message: String){
@@ -27,7 +28,13 @@ class Evento {
         }
         
         
-        return (false, "ok")
+        return (false, "Evento criado")
+    }
+    
+    
+    func toMap() -> [String: Any] {
+        let map = ["id": id, "nome": nome, "data": data.timeIntervalSince1970, "vagas": vagas, "observacoes": observacoes, "organizador": organizador] as [String : Any]
+        return map
     }
     
     

@@ -16,7 +16,7 @@ class FactoryAlert {
     
     static func infoDialog(title: String, messaage: String, buttonText: String) -> UIAlertController {
         let ab = AlertBuilder(title, messaage)
-        let button = UIAlertAction(title: buttonText, style: .default, handler: { action in print("adsfasdf") } )
+        let button = UIAlertAction(title: buttonText, style: .default, handler: nil )
         return ab.addButton(button).build()
     }
     

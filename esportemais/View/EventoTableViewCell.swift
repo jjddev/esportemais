@@ -15,6 +15,9 @@ class EventoTableViewCell: UITableViewCell {
     @IBOutlet weak var data: UILabel!
     @IBOutlet weak var modalidade: UILabel!
     
+    @IBOutlet weak var btnAcao: UIButton!
+    @IBOutlet weak var btnDetalhes: UIButton!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,8 +26,8 @@ class EventoTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
+  
+
     
 }

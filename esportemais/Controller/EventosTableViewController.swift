@@ -13,9 +13,6 @@ class EventosTableViewController: UITableViewController {
     func registerTableViewCells(){
         let textFieldCell = UINib(nibName: "EventoTableViewCell", bundle: nil)
         self.tableView.register(textFieldCell, forCellReuseIdentifier: "especial")
-        
-        
-
     }
 
     let eventos = [1,2,3,4,5,6]
@@ -58,9 +55,20 @@ class EventosTableViewController: UITableViewController {
         cell.data.text = "=== data \(evento) ==="
         cell.local.text = "=== local \(evento) ==="
         cell.modalidade.text = "=== mod \(evento) ==="
- 
+        cell.btnAcao.addTarget(self, action: #selector(acao), for: .touchUpInside)
+        cell.btnDetalhes.addTarget(self, action: #selector(detalhes), for: .touchUpInside)
 
         return cell
+    }
+    
+    
+    @objc func acao(_ sender: AnyObject){
+        print("entrou em acao")
+    }
+    
+    @objc func detalhes(_ sender: AnyObject){
+        print("entrou em detalhes")
+        
     }
     
 

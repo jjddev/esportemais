@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Usuario {
+class Usuario: Modelble {
     var id: String
     var nome: String
     var email: String
@@ -42,6 +42,10 @@ class Usuario {
         }
         
         return (false, "ok")
+    }
+    
+    func toMap() -> [String : Any] {
+        return ["": ""]
     }
     
     

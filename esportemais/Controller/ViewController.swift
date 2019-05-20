@@ -97,9 +97,6 @@ class ViewController: UIViewController {
             Analytics.setUserProperty("sim", forName: "entrou")
             Analytics.logEvent("signed", parameters: ["nome": self.vUsuario.text!])
             
-            //let homeView = self.storyboard?.instantiateViewController(withIdentifier: "eventosController") as! EventosUIViewController
-            //self.navigationController?.pushViewController(homeView, animated: true)
-            
             self.performSegue(withIdentifier: "eventos", sender: nil)
             
         }
