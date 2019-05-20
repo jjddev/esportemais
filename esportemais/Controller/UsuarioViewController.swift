@@ -82,7 +82,7 @@ class UsuarioViewController: UIViewController {
                 
                 print("===== uid criado: \(user.uid) =====")
                 
-                let alert = FactoryAlert.infoDialog(title: "Bem Vindo", messaage: "Conta criado com sucesso", buttonText: "OK")
+                let alert = FactoryAlert.infoDialog(title: "Bem Vindo", messaage: "Conta criada com sucesso", buttonText: "OK")
               
                 let homeView = self.storyboard?.instantiateViewController(withIdentifier: "eventosController") as! EventosUIViewController
                 self.navigationController?.pushViewController(homeView, animated: true)
