@@ -8,27 +8,86 @@
 
 import UIKit
 import Firebase
+import SwiftyJSON
 
-class EventosUIViewController: UIViewController {
+class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var evento = Evento()
     var acaoStatus = (error: false, message: "123")
     var ref: DatabaseReference!
     var alert: UIAlertController!
+    var modalidades = [String]()
     
     @IBOutlet weak var vNome: UITextField!
     @IBOutlet weak var vLocal: UITextField!
     @IBOutlet weak var vData: UIDatePicker!
     @IBOutlet weak var vVagas: UITextField!
-    @IBOutlet weak var vModalidade: UITextField!
+    @IBOutlet weak var vModalidade: UIPickerView!
+    
     @IBOutlet weak var vObservacoes: UITextField!
+    
+    
+
+
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.vModalidade.delegate = self
+        self.vModalidade.dataSource = self
         
         
-        ref = Database.database().reference()
+        
+    
+        
+        
+        
+    
+            
+            self.populateModalidade() { response in
+                self.modalidades = response
+                //self.vModalidade.
+                print("response")
+                print(self.modalidades.count)
+            }
+        
+        
+        
+           //self.vModalidade.reloadAllComponents()
+            
+            
+        
+        
+        
+        
+     
+            
+        
+        
+
+        
+        
+        //vModalidade.reloadAllComponents()
+        
+
+            
+        
+            
+            
+            
+            //print(value)
+            //self.modalidades.append(value![key] as! String)
+            //print(snapshot.value)
+            //self.modalidades = value?.allValues as! [String]
+       
+        
+    
+        //modalidades.append("ZZZ")
+        //modalidades.append("XXX")
+        //modalidades.append("YYY")
+        //self.vModalidade.reloadAllComponents()
+        //print("count: \(modalidades.count)")
         
         vNome.text = evento.nome
         vLocal.text = "Local"
@@ -47,7 +106,7 @@ class EventosUIViewController: UIViewController {
         evento.data = vData.date
         evento.vagas = Int(vVagas.text!) ?? 0
         evento.observacoes = vObservacoes.text ?? ""
-        
+        print("mod: \(evento.modalidade)")
         acaoStatus = evento.isValid()
         
         
@@ -70,6 +129,43 @@ class EventosUIViewController: UIViewController {
         
         self.present(alert, animated: true)
 
+    }
+    
+    
+    func populateModalidade (handler: @escaping (([String]) -> Void) ){
+        
+        ref = Database.database().reference()
+        
+       
+        ref.child("Modalidades").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as! NSDictionary
+            var response = [ String ]()
+            
+            for item in value {
+                let i = JSON(item.value)
+                print(i["descricao"].stringValue)
+                response.append( i.stringValue )
+//                self.modalidades.append(i.stringValue)
+            }
+            handler(response)
+        })
+        print("func \(modalidades.count)")
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return modalidades.count
+    }
+    
+    
+    
+    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let item = modalidades[row]
+        evento.modalidade = item
+        return item
     }
     
     
