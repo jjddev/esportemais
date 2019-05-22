@@ -33,12 +33,11 @@ class EventosTableViewController: UITableViewController {
         
         super.viewDidLoad()
         registerTableViewCells()
-        
-        self.populateEventos(){ response in
+ 
+        EventoService.getEventos(handler: { response in
             self.eventos = response
-            print(self.eventos.count)
             self.tableView.reloadData()
-        }
+        })
         
 
     }

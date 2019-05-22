@@ -12,6 +12,7 @@
 		1339D6452261578900236AA3 /* FireBaseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1339D6442261578900236AA3 /* FireBaseErrors.swift */; };
 		1339D64822615F3B00236AA3 /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1339D64722615F3B00236AA3 /* AlertBuilder.swift */; };
 		13877D222296056800421A62 /* ModalidadeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13877D212296056800421A62 /* ModalidadeService.swift */; };
+		13877D24229615E400421A62 /* EventoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13877D23229615E400421A62 /* EventoService.swift */; };
 		1391988422653ED400E37901 /* FactoryAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391988322653ED400E37901 /* FactoryAlert.swift */; };
 		13972272226E7206009F275D /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13972271226E7206009F275D /* Evento.swift */; };
 		13972274226E72C0009F275D /* Categoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13972273226E72C0009F275D /* Categoria.swift */; };
@@ -39,6 +40,7 @@
 		1339D6442261578900236AA3 /* FireBaseErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseErrors.swift; sourceTree = "<group>"; };
 		1339D64722615F3B00236AA3 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		13877D212296056800421A62 /* ModalidadeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalidadeService.swift; sourceTree = "<group>"; };
+		13877D23229615E400421A62 /* EventoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventoService.swift; sourceTree = "<group>"; };
 		1391988322653ED400E37901 /* FactoryAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryAlert.swift; sourceTree = "<group>"; };
 		13972271226E7206009F275D /* Evento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
 		13972273226E72C0009F275D /* Categoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categoria.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				13877D212296056800421A62 /* ModalidadeService.swift */,
+				13877D23229615E400421A62 /* EventoService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				13972274226E72C0009F275D /* Categoria.swift in Sources */,
 				13CDAEFC228CD5D80065FB47 /* EventoTableViewCell.swift in Sources */,
 				130DA8532280E3FC00A27268 /* UsuarioViewController.swift in Sources */,
+				13877D24229615E400421A62 /* EventoService.swift in Sources */,
 				1339D64822615F3B00236AA3 /* AlertBuilder.swift in Sources */,
 				1339D6452261578900236AA3 /* FireBaseErrors.swift in Sources */,
 				13D07875228628EF0031B49B /* InteressesViewController.swift in Sources */,

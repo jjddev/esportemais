@@ -37,11 +37,17 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         self.vModalidade.delegate = self
         self.vModalidade.dataSource = self
         
+        /*
         self.populateModalidade() { response in
             self.modalidades = response
             self.vModalidade.showsSelectionIndicator = false
             self.vModalidade.reloadAllComponents()
-        }
+        }*/
+        
+        ModalidadeService.getModalidade(handler: { response in
+            self.modalidades = response
+            self.vModalidade.reloadAllComponents()
+        })
         
         vNome.text = evento.nome
         vLocal.text = "Local"
