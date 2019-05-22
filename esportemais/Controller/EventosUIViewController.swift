@@ -18,6 +18,7 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     var alert: UIAlertController!
     var modalidades = [String]()
     
+    @IBOutlet weak var btnSalvar: UIButton!
     @IBOutlet weak var vNome: UITextField!
     @IBOutlet weak var vLocal: UITextField!
     @IBOutlet weak var vData: UIDatePicker!
@@ -45,6 +46,10 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         vNome.text = evento.nome
         vLocal.text = "Local"
         vObservacoes.text = evento.observacoes
+        
+        btnSalvar.layer.cornerRadius = 15
+        btnSalvar.clipsToBounds = true
+        
     }
     
     

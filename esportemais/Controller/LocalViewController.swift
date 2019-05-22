@@ -15,6 +15,8 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var vMapa: MKMapView!
     var locationManager = CLLocationManager()
     
+    @IBOutlet var clicked: UITapGestureRecognizer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,9 +39,10 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
         if let coor = vMapa.userLocation.location?.coordinate{
             vMapa.setCenter(coor, animated: true)
         }
-        
-        
     }
+    
+    
+
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last{
@@ -51,6 +54,32 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
             self.vMapa.setRegion(region, animated: true)
         }
+        
+        
+        print(locations.description)
     }
+    
+    
+    func handleLongPress (gestureRecognizer: UILongPressGestureRecognizer) {
+        if gestureRecognizer.state == UIGestureRecognizer.State.began {
+            let touchPoint: CGPoint = gestureRecognizer.location(in: vMapa)
+            let newCoordinate: CLLocationCoordinate2D = vMapa.convert(touchPoint, toCoordinateFrom: vMapa)
+            addAnnotationOnLocation(pointedCoordinate: newCoordinate)
+        }
+        
+        print("aqui")
+    }
+    
+    
+    
+    func addAnnotationOnLocation(pointedCoordinate: CLLocationCoordinate2D) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = pointedCoordinate
+        annotation.title = "Loading..."
+        annotation.subtitle = "Loading..."
+        vMapa.addAnnotation(annotation)
+    }
+    
+    
 
 }

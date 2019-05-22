@@ -14,14 +14,23 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var vUsuario: UITextField!
     @IBOutlet weak var vSenha: UITextField!
-    
+    @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var btnNovaConta: UIButton!
     var ref: DatabaseReference!
     
     
     
     override func viewDidLoad() {
        
+        btnLogin.layer.cornerRadius = 15
+        btnLogin.clipsToBounds = true
+        
+        btnNovaConta.layer.cornerRadius = 15
+        btnNovaConta.clipsToBounds = true
+        
         super.viewDidLoad()
+        
+        
         
         
         let d = Date()
