@@ -18,6 +18,14 @@ class EventosTableViewController: UITableViewController {
     let eventos = [1,2,3,4,5,6]
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()

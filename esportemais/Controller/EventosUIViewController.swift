@@ -25,7 +25,10 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var vModalidade: UIPickerView!
     
     @IBOutlet weak var vObservacoes: UITextField!
-    
+   
+    override func viewWillAppear(_ animated: Bool) {
+       self.navigationItem.title = "Novo Evento"
+    }
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +38,7 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         self.populateModalidade() { response in
             self.modalidades = response
+            self.vModalidade.showsSelectionIndicator = false
             self.vModalidade.reloadAllComponents()
         }
         
