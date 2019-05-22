@@ -26,92 +26,38 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     @IBOutlet weak var vObservacoes: UITextField!
     
-    
-
-
    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.vModalidade.delegate = self
         self.vModalidade.dataSource = self
         
-        
-        
-    
-        
-        
-        
-    
-            
-            self.populateModalidade() { response in
-                self.modalidades = response
-                //self.vModalidade.
-                print("response")
-                print(self.modalidades.count)
-            }
-        
-        
-        
-           //self.vModalidade.reloadAllComponents()
-            
-            
-        
-        
-        
-        
-     
-            
-        
-        
-
-        
-        
-        //vModalidade.reloadAllComponents()
-        
-
-            
-        
-            
-            
-            
-            //print(value)
-            //self.modalidades.append(value![key] as! String)
-            //print(snapshot.value)
-            //self.modalidades = value?.allValues as! [String]
-       
-        
-    
-        //modalidades.append("ZZZ")
-        //modalidades.append("XXX")
-        //modalidades.append("YYY")
-        //self.vModalidade.reloadAllComponents()
-        //print("count: \(modalidades.count)")
+        self.populateModalidade() { response in
+            self.modalidades = response
+            self.vModalidade.reloadAllComponents()
+        }
         
         vNome.text = evento.nome
         vLocal.text = "Local"
-        //vVagas.text = (evento?.vagas) as String
-        //vModalidade = evento.modalidade
         vObservacoes.text = evento.observacoes
-
-        // Do any additional setup after loading the view.
     }
     
     
     func salvarEvento() -> Bool {
-        
-        
+       
         evento.nome = vNome.text ?? ""
         evento.data = vData.date
         evento.vagas = Int(vVagas.text!) ?? 0
         evento.observacoes = vObservacoes.text ?? ""
-        print("mod: \(evento.modalidade)")
-        acaoStatus = evento.isValid()
         
+        let modalidadeIndex = vModalidade.selectedRow(inComponent: 0)
+        evento.modalidade = modalidades[modalidadeIndex]
+        
+        acaoStatus = evento.isValid()
+
         
         return acaoStatus.error
-        
     }
     
     @IBAction func salvar(_ sender: Any) {
@@ -132,24 +78,19 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     
-    func populateModalidade (handler: @escaping (([String]) -> Void) ){
-        
+    func populateModalidade (handler: @escaping (([String]) -> Void)){
         ref = Database.database().reference()
-        
-       
         ref.child("Modalidades").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as! NSDictionary
-            var response = [ String ]()
+            var response = [String]()
             
             for item in value {
                 let i = JSON(item.value)
-                print(i["descricao"].stringValue)
-                response.append( i.stringValue )
-//                self.modalidades.append(i.stringValue)
-            }
+                //print(i["descricao"].stringValue)
+                response.append(i["descricao"].stringValue)
+           }
             handler(response)
         })
-        print("func \(modalidades.count)")
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
