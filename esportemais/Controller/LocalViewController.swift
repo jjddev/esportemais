@@ -70,6 +70,11 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
         print("aqui")
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let location = touch.location(in: vMapa)
+
+    }
     
     
     func addAnnotationOnLocation(pointedCoordinate: CLLocationCoordinate2D) {

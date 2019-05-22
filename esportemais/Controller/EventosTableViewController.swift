@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import Firebase
+import SwiftyJSON
 
 class EventosTableViewController: UITableViewController {
+    var ref: DatabaseReference!
     
     func registerTableViewCells(){
         let textFieldCell = UINib(nibName: "EventoTableViewCell", bundle: nil)
         self.tableView.register(textFieldCell, forCellReuseIdentifier: "especial")
     }
 
-    let eventos = [1,2,3,4,5,6]
+    var eventos = [Evento]()
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,11 +34,13 @@ class EventosTableViewController: UITableViewController {
         super.viewDidLoad()
         registerTableViewCells()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        self.populateEventos(){ response in
+            self.eventos = response
+            print(self.eventos.count)
+            self.tableView.reloadData()
+        }
+        
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -58,11 +63,16 @@ class EventosTableViewController: UITableViewController {
        let cell = tableView.dequeueReusableCell(withIdentifier: "especial", for: indexPath) as! EventoTableViewCell
         
         let evento = eventos[indexPath.row]
+    
+        var df  = DateFormatter()
+        df.dateFormat = "dd/MM/Y HH:mm:ss"
         
-        cell.nome.text = "=== nome \(evento) ==="
-        cell.data.text = "=== data \(evento) ==="
+        
+        cell.nome.text = evento.nome
+        cell.data.text = df.string(from: evento.data)
         cell.local.text = "=== local \(evento) ==="
-        cell.modalidade.text = "=== mod \(evento) ==="
+        cell.modalidade.text = evento.modalidade
+        
         cell.btnAcao.addTarget(self, action: #selector(acao), for: .touchUpInside)
         cell.btnDetalhes.addTarget(self, action: #selector(detalhes), for: .touchUpInside)
 
@@ -77,6 +87,26 @@ class EventosTableViewController: UITableViewController {
     @objc func detalhes(_ sender: AnyObject){
         print("entrou em detalhes")
         
+    }
+    
+    func populateEventos (handler: @escaping (([Evento]) -> Void)){
+        ref = Database.database().reference()
+        ref.child("Eventos").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as! NSDictionary
+            var response = [Evento]()
+        
+            for item in value {
+                let i = JSON(item.value)
+
+                let e = Evento()
+        
+                e.nome = i["nome"].stringValue
+                e.modalidade = i["modalidade"].stringValue
+                e.data = Date(timeIntervalSince1970: i["data"].doubleValue)
+                response.append(e)
+            }
+        handler(response)
+        })
     }
     
 
