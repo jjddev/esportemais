@@ -14,6 +14,7 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var vMapa: MKMapView!
     var locationManager = CLLocationManager()
+    static let geocoder = CLGeocoder()
     
     @IBOutlet var clicked: UITapGestureRecognizer!
     
@@ -42,7 +43,29 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-
+    @IBAction func click(_ sender: UILongPressGestureRecognizer) {
+        let location = sender.location(in: vMapa)
+       
+        let locCoord = self.vMapa.convert(location, toCoordinateFrom: vMapa)
+        let annotation = MKPointAnnotation()
+        
+        let x = CLLocation(latitude: locCoord.latitude, longitude: locCoord.longitude)
+        
+            LocalViewController.geocoder.reverseGeocodeLocation(x) { (placemarks, _) in
+                if let marca = placemarks?.first {
+                    print("nome: \(marca.name), cidade: \(marca.locality) \(marca)")
+                    print(marca)
+                }
+        }
+        
+        annotation.coordinate = locCoord
+        annotation.title = ">>Evento<<<"
+        self.vMapa.addAnnotation(annotation)
+        
+        
+        print("clicked")
+    }
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last{
@@ -54,7 +77,6 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
             self.vMapa.setRegion(region, animated: true)
         }
-        
         
         print(locations.description)
     }
@@ -73,7 +95,12 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
         let location = touch.location(in: vMapa)
+        //print("x: \(location.x)| y: \(location.y)")
+        
+        print(location)
 
+        
+        
     }
     
     
@@ -84,7 +111,4 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
         annotation.subtitle = "Loading..."
         vMapa.addAnnotation(annotation)
     }
-    
-    
-
 }
