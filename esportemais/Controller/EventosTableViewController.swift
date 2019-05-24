@@ -69,17 +69,30 @@ class EventosTableViewController: UITableViewController {
         
         cell.nome.text = evento.nome
         cell.data.text = df.string(from: evento.data)
-        cell.local.text = "=== local \(evento) ==="
+        cell.local.text = evento.local
         cell.modalidade.text = evento.modalidade
         
         cell.btnAcao.addTarget(self, action: #selector(acao), for: .touchUpInside)
         cell.btnDetalhes.addTarget(self, action: #selector(detalhes), for: .touchUpInside)
+        
+        cell.btnAcao.tag = indexPath.row
+        cell.btnDetalhes.tag = indexPath.row
 
         return cell
     }
     
     
     @objc func acao(_ sender: AnyObject){
+        
+        let id =  (sender.tag)!
+       
+        
+        
+        let evento = eventos[id]
+       
+        ref = Database.database().reference()
+      
+        ref.child("Eventos").child(evento.id).child("participantes").updateChildValues(["002": ["id": "zzz", "nome": "nome 123"]])
         print("entrou em acao")
     }
     
@@ -99,9 +112,11 @@ class EventosTableViewController: UITableViewController {
 
                 let e = Evento()
         
+                e.id = i["id"].stringValue
                 e.nome = i["nome"].stringValue
                 e.modalidade = i["modalidade"].stringValue
                 e.data = Date(timeIntervalSince1970: i["data"].doubleValue)
+                e.local = i["local"].stringValue
                 response.append(e)
             }
         handler(response)

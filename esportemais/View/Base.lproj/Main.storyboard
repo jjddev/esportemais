@@ -746,11 +746,12 @@
                         <outlet property="vNome" destination="J1R-oU-n4s" id="PET-6F-Ztx"/>
                         <outlet property="vObservacoes" destination="YMH-Ty-zYz" id="c9O-Ld-nBq"/>
                         <outlet property="vVagas" destination="r40-sj-MGL" id="FWM-8f-6v1"/>
+                        <segue destination="hLp-GA-LzJ" kind="show" identifier="voltarEventos" id="3Xd-pr-avi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Rt-rP-HJW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3162" y="346"/>
+            <point key="canvasLocation" x="3114" y="270"/>
         </scene>
         <!--Local View Controller-->
         <scene sceneID="Y21-ny-dru">
@@ -949,11 +950,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5UN-vG-ghh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-162.40000000000001" y="241.52923538230885"/>
+            <point key="canvasLocation" x="-361" y="271"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="D2L-j0-KZc"/>
-        <segue reference="uje-39-o4G"/>
+        <segue reference="3Xd-pr-avi"/>
     </inferredMetricsTieBreakers>
 </document>

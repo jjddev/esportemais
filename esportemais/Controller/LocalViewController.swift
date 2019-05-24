@@ -16,6 +16,7 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     static let geocoder = CLGeocoder()
     var localDescricao = ""
+    var localCoord : (lat: Double, lon: Double) = (0, 0)
     
     @IBOutlet var clicked: UITapGestureRecognizer!
     @IBOutlet weak var vLocal: UILabel!
@@ -29,15 +30,13 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+   
         vGrupoLocal.layer.borderWidth = 1
-        
         vGrupoLocal.layer.borderColor = UIColor.blue.cgColor
         
         self.locationManager.requestAlwaysAuthorization()
         
-        // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
+         self.locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
@@ -73,6 +72,8 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
                     //print(marca)
                     self.localDescricao = "\(marca.name!) - \(marca.locality!)"
                     self.vLocal.text = self.localDescricao
+                    self.localCoord.lat = locCoord.latitude
+                    self.localCoord.lon = locCoord.longitude
                 }
         }
         
@@ -110,19 +111,13 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
             let newCoordinate: CLLocationCoordinate2D = vMapa.convert(touchPoint, toCoordinateFrom: vMapa)
             addAnnotationOnLocation(pointedCoordinate: newCoordinate)
         }
-        
-        print("aqui")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
         let location = touch.location(in: vMapa)
         //print("x: \(location.x)| y: \(location.y)")
-        
-        print(location)
-
-        
-        
+        //print(location)
     }
     
     
@@ -140,6 +135,8 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
         if segue.identifier == "definidaLocalizacao" {
             let next = segue.destination as! EventosUIViewController
             next.localDescricao = localDescricao
+            next.localCoord.lat = self.localCoord.lat
+            next.localCoord.lon = self.localCoord.lon
         }
     }
 }

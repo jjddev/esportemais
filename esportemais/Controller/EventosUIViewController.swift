@@ -18,6 +18,7 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     var alert: UIAlertController!
     var modalidades = [String]()
     var localDescricao = ""
+    var localCoord : (lat: Double, lon: Double) = (0, 0)
     
     @IBOutlet weak var btnSalvar: UIButton!
     @IBOutlet weak var vNome: UITextField!
@@ -37,13 +38,6 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         self.vModalidade.delegate = self
         self.vModalidade.dataSource = self
-        
-        /*
-        self.populateModalidade() { response in
-            self.modalidades = response
-            self.vModalidade.showsSelectionIndicator = false
-            self.vModalidade.reloadAllComponents()
-        }*/
         
         ModalidadeService.getModalidade(handler: { response in
             self.modalidades = response
@@ -67,6 +61,7 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         evento.data = vData.date
         evento.vagas = Int(vVagas.text!) ?? 0
         evento.observacoes = vObservacoes.text ?? ""
+        evento.local = vLocal.text ?? ""
         
         let modalidadeIndex = vModalidade.selectedRow(inComponent: 0)
         evento.modalidade = modalidades[modalidadeIndex]
@@ -77,20 +72,26 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         return acaoStatus.error
     }
     
+    
     @IBAction func salvar(_ sender: Any) {
         
         if salvarEvento() {
             alert = FactoryAlert.infoDialog(title: "Falha", messaage: acaoStatus.message, buttonText: "OK")
         }else{
+            ref = Database.database().reference()
             let id = ref.child("Eventos").childByAutoId().key as! String
             evento.id = id
             let mod = evento.toMap()
             ref.child("Eventos").child(id).setValue(mod)
             
+            ref.child("Eventos").child(id).updateChildValues(["participantes": ["123123123": ["id": "xxx", "nome": "nome 123"]]])
+            
+            
             alert = FactoryAlert.infoDialog(title: "Sucesso", messaage: "Evento criado", buttonText: "OK")
         }
         
         self.present(alert, animated: true)
+        performSegue(withIdentifier: "voltarEventos", sender: nil)
 
     }
     
@@ -126,6 +127,7 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         return item
     }
     
+
     
 
     /*

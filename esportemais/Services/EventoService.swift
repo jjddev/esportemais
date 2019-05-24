@@ -23,9 +23,11 @@ class EventoService {
                 
                 let e = Evento()
                 
+                e.id = i["id"].stringValue
                 e.nome = i["nome"].stringValue
                 e.modalidade = i["modalidade"].stringValue
                 e.data = Date(timeIntervalSince1970: i["data"].doubleValue)
+                e.local = i["local"].stringValue
                 response.append(e)
             }
             handler(response)
