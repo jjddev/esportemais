@@ -30,11 +30,14 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var vObservacoes: UITextField!
    
     override func viewWillAppear(_ animated: Bool) {
-       self.navigationItem.title = "Novo Evento"
+       //self.navigationItem.title = "Novo Evento"
+
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         self.vModalidade.delegate = self
         self.vModalidade.dataSource = self
