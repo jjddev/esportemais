@@ -41,13 +41,25 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         ModalidadeService.getModalidade(handler: { response in
             self.modalidades = response
+            
+            
+            var indexModalidade =  self.modalidades.firstIndex(of: self.evento.modalidade)
+            
+            if indexModalidade != nil {
+                self.vModalidade.selectRow(indexModalidade!, inComponent: 0, animated: true)
+            }
+            
+            
             self.vModalidade.reloadAllComponents()
         })
         
         vNome.text = evento.nome
-        vLocal.text = "Local"
         vObservacoes.text = evento.observacoes
         vLocal.text = localDescricao
+        vVagas.text = String(evento.vagas)
+        vData.date = evento.data
+        
+
         
         btnSalvar.layer.cornerRadius = 15
         btnSalvar.clipsToBounds = true
@@ -95,20 +107,13 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
     }
     
-    
-    func populateModalidade (handler: @escaping (([String]) -> Void)){
-        ref = Database.database().reference()
-        ref.child("Modalidades").observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as! NSDictionary
-            var response = [String]()
-            
-            for item in value {
-                let i = JSON(item.value)
-                //print(i["descricao"].stringValue)
-                response.append(i["descricao"].stringValue)
-           }
-            handler(response)
-        })
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "definirLocalizacao" {
+            let next = segue.destination as! LocalViewController
+            salvarEvento() //apenas seta os valores da tela no objeto evento
+            next.evento = evento
+        }
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

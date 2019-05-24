@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D2F9B3967D77B81EA3F20A3 /* Pods_esportemais.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D8184FF25CD4E1288636CD /* Pods_esportemais.framework */; };
 		130DA8532280E3FC00A27268 /* UsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130DA8522280E3FC00A27268 /* UsuarioViewController.swift */; };
 		1339D63F2261452B00236AA3 /* EventosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1339D63E2261452B00236AA3 /* EventosTableViewController.swift */; };
 		1339D6452261578900236AA3 /* FireBaseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1339D6442261578900236AA3 /* FireBaseErrors.swift */; };
@@ -32,6 +31,7 @@
 		16AF304A2277A99F004167B7 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF30492277A99F004167B7 /* Usuario.swift */; };
 		16B387D322762E8500D0B9C9 /* logo-escola-de-esportes2.png in Resources */ = {isa = PBXBuildFile; fileRef = 16B387D222762E8500D0B9C9 /* logo-escola-de-esportes2.png */; };
 		16FFE1012276427A00870327 /* SeederModalidades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE1002276427A00870327 /* SeederModalidades.swift */; };
+		C0CA38FD690EC86AD31F357C /* Pods_esportemais.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DBF5D7B389004E824E119C /* Pods_esportemais.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,9 +61,9 @@
 		16AF30492277A99F004167B7 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		16B387D222762E8500D0B9C9 /* logo-escola-de-esportes2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-escola-de-esportes2.png"; sourceTree = "<group>"; };
 		16FFE1002276427A00870327 /* SeederModalidades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeederModalidades.swift; sourceTree = "<group>"; };
-		3C1800E79E1F142CDFC026EE /* Pods-esportemais.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esportemais.debug.xcconfig"; path = "Target Support Files/Pods-esportemais/Pods-esportemais.debug.xcconfig"; sourceTree = "<group>"; };
-		92D8184FF25CD4E1288636CD /* Pods_esportemais.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_esportemais.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B76C73B994B7D3B5A7A0F08C /* Pods-esportemais.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esportemais.release.xcconfig"; path = "Target Support Files/Pods-esportemais/Pods-esportemais.release.xcconfig"; sourceTree = "<group>"; };
+		6C6569A33022D4DD368F69CC /* Pods-esportemais.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esportemais.release.xcconfig"; path = "Target Support Files/Pods-esportemais/Pods-esportemais.release.xcconfig"; sourceTree = "<group>"; };
+		AA3C280219EF9AE344778CE7 /* Pods-esportemais.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esportemais.debug.xcconfig"; path = "Target Support Files/Pods-esportemais/Pods-esportemais.debug.xcconfig"; sourceTree = "<group>"; };
+		E0DBF5D7B389004E824E119C /* Pods_esportemais.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_esportemais.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D2F9B3967D77B81EA3F20A3 /* Pods_esportemais.framework in Frameworks */,
+				C0CA38FD690EC86AD31F357C /* Pods_esportemais.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +141,7 @@
 				13D24A46225E9C5700C45678 /* esportemais */,
 				13D24A45225E9C5700C45678 /* Products */,
 				E2A2477CC67A55BCCCF81D8D /* Pods */,
-				7B3C115BA23352D80549B82C /* Frameworks */,
+				78600E76361CC17E971AF32B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,10 +176,10 @@
 			path = Seeders;
 			sourceTree = "<group>";
 		};
-		7B3C115BA23352D80549B82C /* Frameworks */ = {
+		78600E76361CC17E971AF32B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				92D8184FF25CD4E1288636CD /* Pods_esportemais.framework */,
+				E0DBF5D7B389004E824E119C /* Pods_esportemais.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -187,8 +187,8 @@
 		E2A2477CC67A55BCCCF81D8D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3C1800E79E1F142CDFC026EE /* Pods-esportemais.debug.xcconfig */,
-				B76C73B994B7D3B5A7A0F08C /* Pods-esportemais.release.xcconfig */,
+				AA3C280219EF9AE344778CE7 /* Pods-esportemais.debug.xcconfig */,
+				6C6569A33022D4DD368F69CC /* Pods-esportemais.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -200,11 +200,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13D24A56225E9C5800C45678 /* Build configuration list for PBXNativeTarget "esportemais" */;
 			buildPhases = (
-				7C1EC9D406AD6CCB61BA85CA /* [CP] Check Pods Manifest.lock */,
+				1E2DBC8CB8452F92CC28D570 /* [CP] Check Pods Manifest.lock */,
 				13D24A40225E9C5700C45678 /* Sources */,
 				13D24A41225E9C5700C45678 /* Frameworks */,
 				13D24A42225E9C5700C45678 /* Resources */,
-				5CD81CA11E320DF210E5CF64 /* [CP] Embed Pods Frameworks */,
+				5363175F22483DF02001CF7A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,7 +265,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5CD81CA11E320DF210E5CF64 /* [CP] Embed Pods Frameworks */ = {
+		1E2DBC8CB8452F92CC28D570 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-esportemais-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5363175F22483DF02001CF7A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -293,28 +315,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-esportemais/Pods-esportemais-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7C1EC9D406AD6CCB61BA85CA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-esportemais-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -485,7 +485,7 @@
 		};
 		13D24A57225E9C5800C45678 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C1800E79E1F142CDFC026EE /* Pods-esportemais.debug.xcconfig */;
+			baseConfigurationReference = AA3C280219EF9AE344778CE7 /* Pods-esportemais.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -503,7 +503,7 @@
 		};
 		13D24A58225E9C5800C45678 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B76C73B994B7D3B5A7A0F08C /* Pods-esportemais.release.xcconfig */;
+			baseConfigurationReference = 6C6569A33022D4DD368F69CC /* Pods-esportemais.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

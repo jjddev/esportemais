@@ -17,6 +17,7 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
     static let geocoder = CLGeocoder()
     var localDescricao = ""
     var localCoord : (lat: Double, lon: Double) = (0, 0)
+    var evento: Evento!
     
     @IBOutlet var clicked: UITapGestureRecognizer!
     @IBOutlet weak var vLocal: UILabel!
@@ -30,6 +31,8 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
    
         vGrupoLocal.layer.borderWidth = 1
         vGrupoLocal.layer.borderColor = UIColor.blue.cgColor
@@ -55,6 +58,7 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func salvarLocal(_ sender: Any) {
+        
         performSegue(withIdentifier: "definidaLocalizacao", sender: nil)
     }
     
@@ -137,6 +141,7 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
             next.localDescricao = localDescricao
             next.localCoord.lat = self.localCoord.lat
             next.localCoord.lon = self.localCoord.lon
+            next.evento = evento
         }
     }
 }

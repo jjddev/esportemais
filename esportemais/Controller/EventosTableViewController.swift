@@ -92,7 +92,7 @@ class EventosTableViewController: UITableViewController {
        
         ref = Database.database().reference()
       
-        ref.child("Eventos").child(evento.id).child("participantes").updateChildValues(["002": ["id": "zzz", "nome": "nome 123"]])
+        ref.child("Eventos").child(evento.id).child("participantes").updateChildValues(["009": ["id": "zzz", "nome": "nome 123"]])
         print("entrou em acao")
     }
     
