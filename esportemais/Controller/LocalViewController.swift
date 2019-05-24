@@ -15,12 +15,25 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var vMapa: MKMapView!
     var locationManager = CLLocationManager()
     static let geocoder = CLGeocoder()
+    var localDescricao = ""
     
     @IBOutlet var clicked: UITapGestureRecognizer!
+    @IBOutlet weak var vLocal: UILabel!
+    @IBOutlet weak var btnConfirmar: UIButton!
+    @IBOutlet weak var vGrupoLocal: UIView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = "Definir localização"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        vGrupoLocal.layer.borderWidth = 1
+        
+        vGrupoLocal.layer.borderColor = UIColor.blue.cgColor
+        
         self.locationManager.requestAlwaysAuthorization()
         
         // For use in foreground
@@ -42,6 +55,9 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func salvarLocal(_ sender: Any) {
+        performSegue(withIdentifier: "definidaLocalizacao", sender: nil)
+    }
     
     @IBAction func click(_ sender: UILongPressGestureRecognizer) {
         let location = sender.location(in: vMapa)
@@ -53,17 +69,23 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
         
             LocalViewController.geocoder.reverseGeocodeLocation(x) { (placemarks, _) in
                 if let marca = placemarks?.first {
-                    print("nome: \(marca.name), cidade: \(marca.locality) \(marca)")
-                    print(marca)
+                    //print("nome: \(marca.name), cidade: \(marca.locality) \(marca)")
+                    //print(marca)
+                    self.localDescricao = "\(marca.name!) - \(marca.locality!)"
+                    self.vLocal.text = self.localDescricao
                 }
         }
+        
+        
+        self.vMapa.annotations.forEach({
+            vMapa.removeAnnotation($0)
+        })
+        
+        self.vMapa.removeAnnotation(annotation)
         
         annotation.coordinate = locCoord
         annotation.title = ">>Evento<<<"
         self.vMapa.addAnnotation(annotation)
-        
-        
-        print("clicked")
     }
     
     
@@ -110,5 +132,14 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
         annotation.title = "Loading..."
         annotation.subtitle = "Loading..."
         vMapa.addAnnotation(annotation)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "definidaLocalizacao" {
+            let next = segue.destination as! EventosUIViewController
+            next.localDescricao = localDescricao
+        }
     }
 }
