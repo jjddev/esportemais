@@ -22,57 +22,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
        
+        super.viewDidLoad()
+
         btnLogin.layer.cornerRadius = 15
         btnLogin.clipsToBounds = true
         
         btnNovaConta.layer.cornerRadius = 15
         btnNovaConta.clipsToBounds = true
-        
-        super.viewDidLoad()
-        
-        
-        
-        
-        let d = Date()
-        
-        var df  = DateFormatter()
-        
-        df.dateFormat = "dd/MM/Y HH:mm:ss"
-        
-        print("aaaaaaaaaa")
-        
-        print(df.string(from: d))
-        
-        //let u = Usuario()
-        //u.setupProperties()
-        
-        
-        Analytics.setUserProperty("sim", forName: "entrou")
-        //Analytics.logEvent("signed", parameters: ["nome": self.vUsuario.text!])
-        Analytics.logEvent("novo", parameters: ["teste": "aquiiiiiiiii"])
-        
-        
-        ref = Database.database().reference()
-        
-        let id = "3"
-        
-        let m = ref.child("Modalidades").childByAutoId().key as! String
-       
-        
-        ref.child("teste").child(id).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            let value = snapshot.value as? NSDictionary
-            let nome = value?["nome"] as? String ?? ""
-
-           // print(nome)
-            
-            // ...
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
 
@@ -106,6 +62,12 @@ class ViewController: UIViewController {
             Analytics.setUserProperty("sim", forName: "entrou")
             Analytics.logEvent("signed", parameters: ["nome": self.vUsuario.text!])
             
+            let defaults = UserDefaults.standard
+            
+            let idUsuario = Auth.auth().currentUser?.uid
+            defaults.set(idUsuario, forKey: "idUsuario")
+            
+            
             self.performSegue(withIdentifier: "eventos", sender: nil)
             
         }
@@ -125,16 +87,7 @@ class ViewController: UIViewController {
             
             let alert = FactoryAlert.infoDialog(title: "Bem Vindo", messaage: "Conta criado com sucesso", buttonText: "OK")
             self.present(alert, animated: true)
-            
-            
-            
-            //self.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: true)
         }
-
-        
-        
-       // navigationController?.popToViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
-        
     }
     
     func modal(_ titulo: String, _ mensagem: String){

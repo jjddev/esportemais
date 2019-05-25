@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hLp-GA-LzJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Buh-Bb-i6V">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -738,9 +738,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KVt-xW-lqr"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Novo Evento" id="Sua-Zj-Omp">
-                        <barButtonItem key="backBarButtonItem" title="Voltar" id="Q8t-25-P79"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Novo Evento" id="Sua-Zj-Omp"/>
                     <connections>
                         <outlet property="btnSalvar" destination="40l-4G-8CG" id="Rb3-J8-Vvs"/>
                         <outlet property="vData" destination="uRH-9q-Fyh" id="sHa-XI-sCR"/>
@@ -754,7 +752,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Rt-rP-HJW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3972" y="331"/>
+            <point key="canvasLocation" x="3993" y="349"/>
         </scene>
         <!--Local View Controller-->
         <scene sceneID="Y21-ny-dru">
@@ -765,7 +763,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2l-gT-5IF">
-                                <rect key="frame" x="0.0" y="20" width="375" height="448"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="448"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="448" id="nK4-Ol-oP5"/>
@@ -775,10 +773,10 @@
                                 </connections>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQx-ZG-QM6">
-                                <rect key="frame" x="5" y="543" width="365" height="119"/>
+                                <rect key="frame" x="5" y="587" width="365" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsF-90-nSY">
-                                        <rect key="frame" x="97.5" y="34.5" width="170" height="50"/>
+                                        <rect key="frame" x="97.5" y="12.5" width="170" height="50"/>
                                         <color key="backgroundColor" red="0.55972112964706033" green="0.046707739988852248" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="170" id="YPe-GB-ncM"/>
@@ -798,7 +796,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ur-05-wvO">
-                                <rect key="frame" x="5" y="488" width="365" height="50"/>
+                                <rect key="frame" x="5" y="532" width="365" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzz-IW-PCe">
                                         <rect key="frame" x="5" y="0.0" width="45.5" height="21"/>
@@ -859,7 +857,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3724" y="1316"/>
+            <point key="canvasLocation" x="3292" y="1205"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qd4-9e-PhA">
@@ -975,8 +973,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kKN-TK-eBA"/>
         <segue reference="D2L-j0-KZc"/>
-        <segue reference="3Xd-pr-avi"/>
+        <segue reference="uje-39-o4G"/>
     </inferredMetricsTieBreakers>
 </document>

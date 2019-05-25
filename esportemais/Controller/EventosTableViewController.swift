@@ -56,13 +56,21 @@ class EventosTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-        
+
        let cell = tableView.dequeueReusableCell(withIdentifier: "especial", for: indexPath) as! EventoTableViewCell
         
         let evento = eventos[indexPath.row]
     
+        
+        let defaults = UserDefaults.standard
+        let eventosInscritos = defaults.stringArray(forKey: "eventos") ?? [String]()
+        
+        for item in eventosInscritos {
+            if item == evento.id {
+                cell.btnAcao.setTitle("Desistir", for: .normal)
+            }
+        }
+        
         var df  = DateFormatter()
         df.dateFormat = "dd/MM/Y HH:mm:ss"
         
@@ -85,15 +93,37 @@ class EventosTableViewController: UITableViewController {
     @objc func acao(_ sender: AnyObject){
         
         let id =  (sender.tag)!
-       
-        
-        
         let evento = eventos[id]
+        
+        let defaults = UserDefaults.standard
+        let idUsuario = defaults.string(forKey: "idUsuario") ?? ""
+        var eventosInscritos = defaults.array(forKey: "eventos") ?? [String]()
        
         ref = Database.database().reference()
-      
-        ref.child("Eventos").child(evento.id).child("participantes").updateChildValues(["009": ["id": "zzz", "nome": "nome 123"]])
-        print("entrou em acao")
+        
+        let s = sender as! UIButton
+        
+        if s.titleLabel?.text == "Participar" {
+            ref.child("Eventos").child(evento.id).child("participantes").updateChildValues([idUsuario: ["id": idUsuario, "nome": "nome 123"]])
+            eventosInscritos.append(evento.id)
+        } else {
+            ref.child("Eventos").child(evento.id).child("participantes").child(idUsuario).removeValue()
+            
+            //let index = eventosInscritos.contains(where: {evento.id == $0 as! String})
+            
+            
+            eventosInscritos.remove(at: 0)
+            
+        }
+        
+        defaults.set(eventosInscritos, forKey: "eventos")
+        
+        
+        print(defaults.array(forKey: "eventos"))
+        
+        tableView.reloadData()
+        
+        //print("entrou em acao")
     }
     
     @objc func detalhes(_ sender: AnyObject){
@@ -101,27 +131,6 @@ class EventosTableViewController: UITableViewController {
         
     }
     
-    func populateEventos (handler: @escaping (([Evento]) -> Void)){
-        ref = Database.database().reference()
-        ref.child("Eventos").observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as! NSDictionary
-            var response = [Evento]()
-        
-            for item in value {
-                let i = JSON(item.value)
-
-                let e = Evento()
-        
-                e.id = i["id"].stringValue
-                e.nome = i["nome"].stringValue
-                e.modalidade = i["modalidade"].stringValue
-                e.data = Date(timeIntervalSince1970: i["data"].doubleValue)
-                e.local = i["local"].stringValue
-                response.append(e)
-            }
-        handler(response)
-        })
-    }
     
 
     /*
