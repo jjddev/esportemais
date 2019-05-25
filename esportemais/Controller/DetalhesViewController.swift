@@ -30,6 +30,10 @@ class DetalhesViewController: UIViewController {
         vVagas.text = String(evento.vagas)
         vObservacoes.text = evento.observacoes
         
+        let df  = DateFormatter()
+        df.dateFormat = "dd/MM/Y HH:mm"
+        vData.text = df.string(from: evento.data)
+        
         // Do any additional setup after loading the view.
     }
     

@@ -138,11 +138,9 @@ class EventosTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let btn = sender as! UIButton
-        
         if segue.identifier == "detalhesEvento" {
             let next = segue.destination as! DetalhesViewController
-            
+            let btn = sender as! UIButton
             let evento = eventos[btn.tag]
             next.evento = evento
         }
