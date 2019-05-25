@@ -26,19 +26,19 @@ class Usuario: Modelble {
     func isValid() -> (error: Bool, message: String) {
         
         if nome.trimmingCharacters(in: .whitespaces).isEmpty {
-            return (true, "Nome invalido")
+            return (true, "Nome inválido")
         }
         
         if email.trimmingCharacters(in: .whitespaces).isEmpty {
-            return (true, "Email invalido")
+            return (true, "Email inválido")
         }
         
         if senha.trimmingCharacters(in: .whitespaces).isEmpty {
-            return (true, "Senha invalida")
+            return (true, "Senha inválida")
         }
         
         if senha.count < 6 {
-            return (true, "A senha deve ter no minimo 6 caractres")
+            return (true, "A senha deve ter no mínimo 6 caractres")
         }
         
         return (false, "ok")
