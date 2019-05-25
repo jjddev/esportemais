@@ -30,6 +30,7 @@
 		16708533228A7F1A0064BB4C /* EventosUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16708532228A7F1A0064BB4C /* EventosUIViewController.swift */; };
 		16AF304A2277A99F004167B7 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF30492277A99F004167B7 /* Usuario.swift */; };
 		16B387D322762E8500D0B9C9 /* logo-escola-de-esportes2.png in Resources */ = {isa = PBXBuildFile; fileRef = 16B387D222762E8500D0B9C9 /* logo-escola-de-esportes2.png */; };
+		16E330C22299E97800B94C27 /* DetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E330C12299E97800B94C27 /* DetalhesViewController.swift */; };
 		16FFE1012276427A00870327 /* SeederModalidades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE1002276427A00870327 /* SeederModalidades.swift */; };
 		C5877468F321C205863CA09E /* Pods_esportemais.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18001186598FE094EA780771 /* Pods_esportemais.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		16708532228A7F1A0064BB4C /* EventosUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosUIViewController.swift; sourceTree = "<group>"; };
 		16AF30492277A99F004167B7 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		16B387D222762E8500D0B9C9 /* logo-escola-de-esportes2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-escola-de-esportes2.png"; sourceTree = "<group>"; };
+		16E330C12299E97800B94C27 /* DetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesViewController.swift; sourceTree = "<group>"; };
 		16FFE1002276427A00870327 /* SeederModalidades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeederModalidades.swift; sourceTree = "<group>"; };
 		18001186598FE094EA780771 /* Pods_esportemais.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_esportemais.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A768A4F77B270F7C0287F3 /* Pods-esportemais.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esportemais.release.xcconfig"; path = "Target Support Files/Pods-esportemais/Pods-esportemais.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				13D07874228628EF0031B49B /* InteressesViewController.swift */,
 				13D0787622862C590031B49B /* LocalViewController.swift */,
 				16708532228A7F1A0064BB4C /* EventosUIViewController.swift */,
+				16E330C12299E97800B94C27 /* DetalhesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				13972272226E7206009F275D /* Evento.swift in Sources */,
 				16AF304A2277A99F004167B7 /* Usuario.swift in Sources */,
 				16048890229330C200A69E35 /* Modelble.swift in Sources */,
+				16E330C22299E97800B94C27 /* DetalhesViewController.swift in Sources */,
 				13D24A48225E9C5700C45678 /* AppDelegate.swift in Sources */,
 				16708533228A7F1A0064BB4C /* EventosUIViewController.swift in Sources */,
 				13877D222296056800421A62 /* ModalidadeService.swift in Sources */,

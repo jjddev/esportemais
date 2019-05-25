@@ -133,7 +133,19 @@ class EventosTableViewController: UITableViewController {
     
     @objc func detalhes(_ sender: AnyObject){
         print("entrou em detalhes")
+        performSegue(withIdentifier: "detalhesEvento", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        let btn = sender as! UIButton
+        
+        if segue.identifier == "detalhesEvento" {
+            let next = segue.destination as! DetalhesViewController
+            
+            let evento = eventos[btn.tag]
+            next.evento = evento
+        }
     }
     
     
