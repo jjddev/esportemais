@@ -11,7 +11,10 @@ import Firebase
 import SwiftyJSON
 
 class EventosTableViewController: UITableViewController {
-    var ref: DatabaseReference!
+
+    let DESISTIR = "Desistir"
+    let PARTICIPAR = "Participar"
+    
     
     func registerTableViewCells(){
         let textFieldCell = UINib(nibName: "EventoTableViewCell", bundle: nil)
@@ -30,7 +33,7 @@ class EventosTableViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        
+       
         super.viewDidLoad()
         registerTableViewCells()
  
@@ -39,6 +42,8 @@ class EventosTableViewController: UITableViewController {
             self.tableView.reloadData()
         })
         
+         let defaults = UserDefaults.standard
+         print(defaults.stringArray(forKey: "eventos") as! [String])
 
     }
 
@@ -67,7 +72,7 @@ class EventosTableViewController: UITableViewController {
         
         for item in eventosInscritos {
             if item == evento.id {
-                cell.btnAcao.setTitle("Desistir", for: .normal)
+                cell.btnAcao.setTitle(DESISTIR, for: .normal)
             }
         }
         
@@ -97,33 +102,33 @@ class EventosTableViewController: UITableViewController {
         
         let defaults = UserDefaults.standard
         let idUsuario = defaults.string(forKey: "idUsuario") ?? ""
-        var eventosInscritos = defaults.array(forKey: "eventos") ?? [String]()
+        var eventosInscritos = defaults.array(forKey: "eventos") as! [String]
        
-        ref = Database.database().reference()
-        
-        let s = sender as! UIButton
-        
-        if s.titleLabel?.text == "Participar" {
-            ref.child("Eventos").child(evento.id).child("participantes").updateChildValues([idUsuario: ["id": idUsuario, "nome": "nome 123"]])
+        let btnAcao = sender as! UIButton
+        var btnTexto = ""
+        if btnAcao.titleLabel?.text == PARTICIPAR {
             eventosInscritos.append(evento.id)
+            EventoService.addParticipante(idEvento: evento.id, idUsuario: idUsuario)
+            btnTexto = DESISTIR
         } else {
-            ref.child("Eventos").child(evento.id).child("participantes").child(idUsuario).removeValue()
+            EventoService.removeParticipante(idEvento: evento.id, idUsuario: idUsuario)
+             let index = eventosInscritos.firstIndex{
+                let s = $0 as! String
+                return s == evento.id
+            }
             
-            //let index = eventosInscritos.contains(where: {evento.id == $0 as! String})
+            if index != nil {
+                eventosInscritos.remove(at: index!)
+                print("index: \(index)")
+            }
             
-            
-            eventosInscritos.remove(at: 0)
-            
+            btnTexto = PARTICIPAR
         }
         
-        defaults.set(eventosInscritos, forKey: "eventos")
-        
-        
-        print(defaults.array(forKey: "eventos"))
+        EventoService.saveEventosCache(eventosInscritos)
+        btnAcao.setTitle(btnTexto, for: .normal)
         
         tableView.reloadData()
-        
-        //print("entrou em acao")
     }
     
     @objc func detalhes(_ sender: AnyObject){

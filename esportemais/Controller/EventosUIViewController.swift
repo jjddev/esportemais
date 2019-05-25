@@ -14,7 +14,6 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
     var evento = Evento()
     var acaoStatus = (error: false, message: "123")
-    var ref: DatabaseReference!
     var alert: UIAlertController!
     var modalidades = [String]()
     var localDescricao = ""
@@ -37,16 +36,13 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         self.vModalidade.delegate = self
         self.vModalidade.dataSource = self
         
         ModalidadeService.getModalidade(handler: { response in
             self.modalidades = response
             
-            
-            var indexModalidade =  self.modalidades.firstIndex(of: self.evento.modalidade)
+            let indexModalidade =  self.modalidades.firstIndex(of: self.evento.modalidade)
             
             if indexModalidade != nil {
                 self.vModalidade.selectRow(indexModalidade!, inComponent: 0, animated: true)
@@ -61,8 +57,6 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         vLocal.text = localDescricao
         vVagas.text = String(evento.vagas)
         vData.date = evento.data
-        
-
         
         btnSalvar.layer.cornerRadius = 15
         btnSalvar.clipsToBounds = true
@@ -94,16 +88,18 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         if salvarEvento() {
             alert = FactoryAlert.infoDialog(title: "Falha", messaage: acaoStatus.message, buttonText: "OK")
         }else{
-            ref = Database.database().reference()
-            let id = ref.child("Eventos").childByAutoId().key as! String
-            evento.id = id
-            let mod = evento.toMap()
-            ref.child("Eventos").child(id).setValue(mod)
+
+            let defaults = UserDefaults.standard
+            let idUsuario = defaults.string(forKey: "idUsuario") ?? ""
+            var eventosInscritos = defaults.stringArray(forKey: "eventos") as! [String]
             
-            ref.child("Eventos").child(id).updateChildValues(["participantes": ["123123123": ["id": "xxx", "nome": "nome 123"]]])
             
+            let e = EventoService.newEvento(evento, idUsuario)
+            eventosInscritos.append(e.id)
+            EventoService.saveEventosCache(eventosInscritos)
             
             alert = FactoryAlert.infoDialog(title: "Sucesso", messaage: "Evento criado", buttonText: "OK")
+            print(defaults.stringArray(forKey: "eventos") as! [String])
         }
         
         self.present(alert, animated: true)
