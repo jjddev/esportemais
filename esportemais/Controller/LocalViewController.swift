@@ -62,10 +62,6 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
             self.vMapa.addAnnotation(annotation)
         }
         
-
-        
-
-        
    
         vGrupoLocal.layer.borderWidth = 1
         vGrupoLocal.layer.borderColor = UIColor.blue.cgColor
@@ -91,7 +87,11 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func salvarLocal(_ sender: Any) {
-        
+        if localDescricao == nil {
+            let alert = FactoryAlert.infoDialog(title: "Falha", messaage: "Defina o local do evento", buttonText: "OK")
+            self.present(alert, animated: true)
+            return
+        }
         performSegue(withIdentifier: "definidaLocalizacao", sender: nil)
     }
     

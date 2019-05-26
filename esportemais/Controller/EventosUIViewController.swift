@@ -103,8 +103,10 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             alert = FactoryAlert.infoDialog(title: "Sucesso", messaage: "Evento criado", buttonText: "OK")
             print(defaults.stringArray(forKey: "eventos") as! [String])
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.present(self.alert, animated: true)
+        }
         
-        self.present(alert, animated: true)
         performSegue(withIdentifier: "voltarEventos", sender: nil)
 
     }
