@@ -33,6 +33,8 @@ class EventoService {
                 e.modalidade = i["modalidade"].stringValue
                 e.data = Date(timeIntervalSince1970: i["data"].doubleValue)
                 e.local = i["local"].stringValue
+                e.localLat = i["localLat"].doubleValue
+                e.localLon = i["localLon"].doubleValue
                 response.append(e)
             }
             handler(response)

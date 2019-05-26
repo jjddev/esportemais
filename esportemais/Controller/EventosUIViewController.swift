@@ -72,6 +72,8 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         evento.vagas = Int(vVagas.text!) ?? 0
         evento.observacoes = vObservacoes.text ?? ""
         evento.local = vLocal.text ?? ""
+        evento.localLat = localCoord.lat
+        evento.localLon = localCoord.lon
         
         let modalidadeIndex = vModalidade.selectedRow(inComponent: 0)
         evento.modalidade = modalidades[modalidadeIndex]

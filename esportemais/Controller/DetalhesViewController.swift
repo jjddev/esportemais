@@ -21,6 +21,28 @@ class DetalhesViewController: UIViewController {
     @IBOutlet weak var vObservacoes: UILabel!
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = "Detalhes"
+    }
+    
+    @IBAction func verMapa(_ sender: Any) {
+   
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "verLocalizacao" {
+            let next = segue.destination as! LocalViewController
+            
+            //let lat = -25.45216037480428
+            //let lon = -49.25463366666668
+            
+            next.lat = evento.localLat
+            next.lon = evento.localLon
+            next.localDescricao = evento.local
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

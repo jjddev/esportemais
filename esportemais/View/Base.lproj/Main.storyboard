@@ -653,6 +653,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3v1-nr-nUo">
+                                        <rect key="frame" x="271" y="-7" width="86" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Ver no mapa"/>
+                                        <connections>
+                                            <action selector="verMapa:" destination="OfF-tz-S1J" eventType="touchUpInside" id="xpW-0A-ikC"/>
+                                            <segue destination="e3j-L5-YMc" kind="show" identifier="verLocalizacao" id="cyM-Zs-SJ4"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -700,7 +709,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vVd-ge-ALG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3248.8000000000002" y="247.82608695652175"/>
+            <point key="canvasLocation" x="3199" y="403"/>
         </scene>
         <!--Novo Evento-->
         <scene sceneID="mQM-Pd-9KR">
@@ -970,12 +979,12 @@
                         <outlet property="vNome" destination="J1R-oU-n4s" id="PET-6F-Ztx"/>
                         <outlet property="vObservacoes" destination="YMH-Ty-zYz" id="c9O-Ld-nBq"/>
                         <outlet property="vVagas" destination="r40-sj-MGL" id="FWM-8f-6v1"/>
-                        <segue destination="hLp-GA-LzJ" kind="show" identifier="voltarEventos" id="3Xd-pr-avi"/>
+                        <segue destination="hLp-GA-LzJ" kind="show" identifier="voltarEventos" id="4iR-EG-Wd1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Rt-rP-HJW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3025" y="1285"/>
+            <point key="canvasLocation" x="2156" y="1356"/>
         </scene>
         <!--Local View Controller-->
         <scene sceneID="Y21-ny-dru">
@@ -1080,7 +1089,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4578" y="898"/>
+            <point key="canvasLocation" x="3442" y="1355"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qd4-9e-PhA">
@@ -1180,6 +1189,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="kKN-TK-eBA"/>
         <segue reference="rmQ-eC-qEk"/>
-        <segue reference="3Xd-pr-avi"/>
+        <segue reference="4iR-EG-Wd1"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,23 +15,56 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var vMapa: MKMapView!
     var locationManager = CLLocationManager()
     static let geocoder = CLGeocoder()
-    var localDescricao = ""
+    var localDescricao: String!
     var localCoord : (lat: Double, lon: Double) = (0, 0)
     var evento: Evento!
+    var lat: Double!
+    var lon: Double!
     
     @IBOutlet var clicked: UITapGestureRecognizer!
     @IBOutlet weak var vLocal: UILabel!
     @IBOutlet weak var btnConfirmar: UIButton!
     @IBOutlet weak var vGrupoLocal: UIView!
     
+
+    
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationItem.title = "Definir localização"
+        
+        var tituloTela = ""
+        
+        if localDescricao != nil {
+            tituloTela = "Localização"
+            btnConfirmar.isHidden = true
+        } else {
+            tituloTela = "Definir localização"
+        }
+        
+        self.navigationItem.title = tituloTela
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        vLocal.text = localDescricao
         
+        
+        if lat == nil {
+            localCoord.lat = -25.451739
+            localCoord.lon = -49.251087
+        } else {
+            localCoord.lat = lat
+            localCoord.lon = lon
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate.latitude = localCoord.lat
+            annotation.coordinate.longitude = localCoord.lon
+            annotation.title = ">>Evento<<<"
+            self.vMapa.addAnnotation(annotation)
+        }
+        
+
+        
+
         
    
         vGrupoLocal.layer.borderWidth = 1
@@ -78,6 +111,9 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
                     self.vLocal.text = self.localDescricao
                     self.localCoord.lat = locCoord.latitude
                     self.localCoord.lon = locCoord.longitude
+                    
+                    print("lat: \(locCoord.latitude) long: \(locCoord.longitude)")
+                    
                 }
         }
         
@@ -97,8 +133,11 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last{
             
-            let logitude = -49.251087
-            let latitude = -25.451739
+            //let logitude = -49.251087
+            //let latitude = -25.451739
+            
+            let logitude = localCoord.lon
+            let latitude = localCoord.lat
             
             let center = CLLocationCoordinate2D(latitude: latitude, longitude: logitude)
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))

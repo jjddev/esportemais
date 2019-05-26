@@ -17,6 +17,8 @@ class Evento: Modelble {
     var organizador = ""
     var modalidade = ""
     var local = ""
+    var localLat = 0.0
+    var localLon = 0.0
     
    
     func isValid() -> (error: Bool, message: String){
@@ -35,7 +37,7 @@ class Evento: Modelble {
     
     
     func toMap() -> [String: Any] {
-        let map = ["id": id, "nome": nome, "data": data.timeIntervalSince1970, "vagas": vagas, "observacoes": observacoes, "organizador": organizador, "modalidade": modalidade, "local": local] as [String : Any]
+        let map = ["id": id, "nome": nome, "data": data.timeIntervalSince1970, "vagas": vagas, "observacoes": observacoes, "organizador": organizador, "modalidade": modalidade, "local": local, "localLat": localLat, "localLon": localLon] as [String : Any]
         return map
     }
     

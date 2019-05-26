@@ -132,7 +132,6 @@ class EventosTableViewController: UITableViewController {
     }
     
     @objc func detalhes(_ sender: AnyObject){
-        print("entrou em detalhes")
         performSegue(withIdentifier: "detalhesEvento", sender: sender)
     }
     
