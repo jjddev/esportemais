@@ -42,9 +42,9 @@ class EventosTableViewController: UITableViewController {
             self.tableView.reloadData()
         })
         
-         let defaults = UserDefaults.standard
+        let defaults = UserDefaults.standard
         let idUsuario = defaults.string(forKey: "idUsuario")
-         //print(defaults.stringArray(forKey: "eventos#\(idUsuario)") as! [String])
+        //print(defaults.stringArray(forKey: "eventos#\(idUsuario)") as! [String])
 
     }
 
