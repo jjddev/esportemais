@@ -80,6 +80,10 @@ class UsuarioViewController: UIViewController {
                 let novo = ["nome": self.usuario.nome, "email" : self.usuario.email, "id": user.uid]
                 self.ref.child("Usuarios").child(user.uid).setValue(novo)
                 
+                let defaults = UserDefaults.standard
+                defaults.setValue(user.uid, forKeyPath: "idUsuario")
+                defaults.setValue([], forKey: "eventos#\(user.uid)")
+                
                 print("===== uid criado: \(user.uid) =====")
                 
                 let alert = FactoryAlert.infoDialog(title: "Bem Vindo", messaage: "Conta criada com sucesso", buttonText: "OK")
