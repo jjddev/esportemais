@@ -43,7 +43,8 @@ class EventosTableViewController: UITableViewController {
         })
         
          let defaults = UserDefaults.standard
-         print(defaults.stringArray(forKey: "eventos") as! [String])
+        let idUsuario = defaults.string(forKey: "idUsuario")
+         //print(defaults.stringArray(forKey: "eventos#\(idUsuario)") as! [String])
 
     }
 
@@ -68,7 +69,8 @@ class EventosTableViewController: UITableViewController {
     
         
         let defaults = UserDefaults.standard
-        let eventosInscritos = defaults.stringArray(forKey: "eventos") ?? [String]()
+        let idUsuario = defaults.string(forKey: "idUsuario")
+        let eventosInscritos = defaults.stringArray(forKey: "eventos#\(idUsuario)") ?? [String]()
         
         for item in eventosInscritos {
             if item == evento.id {
@@ -102,7 +104,7 @@ class EventosTableViewController: UITableViewController {
         
         let defaults = UserDefaults.standard
         let idUsuario = defaults.string(forKey: "idUsuario") ?? ""
-        var eventosInscritos = defaults.array(forKey: "eventos") as! [String]
+        var eventosInscritos = defaults.array(forKey: "eventos#\(idUsuario)") as! [String]
        
         let btnAcao = sender as! UIButton
         var btnTexto = ""

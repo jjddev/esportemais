@@ -64,7 +64,8 @@ class EventoService {
     
     static func saveEventosCache(_ eventosInscritos: [String]){
         let defaults = UserDefaults.standard
-        defaults.set(eventosInscritos, forKey: "eventos")
+        let idUsuario = defaults.string(forKey: "idUsuario")
+        defaults.set(eventosInscritos, forKey: "eventos#\(idUsuario)")
     }
     
     
