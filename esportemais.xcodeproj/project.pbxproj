@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10689158A338B10E9823C37F /* Pods_esportemais.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EC8AFBCAF5D97C686A30FD /* Pods_esportemais.framework */; };
 		130DA8532280E3FC00A27268 /* UsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130DA8522280E3FC00A27268 /* UsuarioViewController.swift */; };
 		1339D63F2261452B00236AA3 /* EventosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1339D63E2261452B00236AA3 /* EventosTableViewController.swift */; };
 		1339D6452261578900236AA3 /* FireBaseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1339D6442261578900236AA3 /* FireBaseErrors.swift */; };
@@ -32,10 +33,10 @@
 		16B387D322762E8500D0B9C9 /* logo-escola-de-esportes2.png in Resources */ = {isa = PBXBuildFile; fileRef = 16B387D222762E8500D0B9C9 /* logo-escola-de-esportes2.png */; };
 		16E330C22299E97800B94C27 /* DetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E330C12299E97800B94C27 /* DetalhesViewController.swift */; };
 		16FFE1012276427A00870327 /* SeederModalidades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE1002276427A00870327 /* SeederModalidades.swift */; };
-		C5877468F321C205863CA09E /* Pods_esportemais.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18001186598FE094EA780771 /* Pods_esportemais.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A80471733599C8154FCA55E /* Pods-esportemais.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esportemais.release.xcconfig"; path = "Target Support Files/Pods-esportemais/Pods-esportemais.release.xcconfig"; sourceTree = "<group>"; };
 		130DA8522280E3FC00A27268 /* UsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioViewController.swift; sourceTree = "<group>"; };
 		1339D63E2261452B00236AA3 /* EventosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosTableViewController.swift; sourceTree = "<group>"; };
 		1339D6442261578900236AA3 /* FireBaseErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseErrors.swift; sourceTree = "<group>"; };
@@ -63,9 +64,8 @@
 		16B387D222762E8500D0B9C9 /* logo-escola-de-esportes2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-escola-de-esportes2.png"; sourceTree = "<group>"; };
 		16E330C12299E97800B94C27 /* DetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesViewController.swift; sourceTree = "<group>"; };
 		16FFE1002276427A00870327 /* SeederModalidades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeederModalidades.swift; sourceTree = "<group>"; };
-		18001186598FE094EA780771 /* Pods_esportemais.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_esportemais.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72A768A4F77B270F7C0287F3 /* Pods-esportemais.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esportemais.release.xcconfig"; path = "Target Support Files/Pods-esportemais/Pods-esportemais.release.xcconfig"; sourceTree = "<group>"; };
-		DD88DC09563E0160840968D8 /* Pods-esportemais.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esportemais.debug.xcconfig"; path = "Target Support Files/Pods-esportemais/Pods-esportemais.debug.xcconfig"; sourceTree = "<group>"; };
+		EA0F23D41BF76C91907FDFD8 /* Pods-esportemais.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-esportemais.debug.xcconfig"; path = "Target Support Files/Pods-esportemais/Pods-esportemais.debug.xcconfig"; sourceTree = "<group>"; };
+		F0EC8AFBCAF5D97C686A30FD /* Pods_esportemais.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_esportemais.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,13 +73,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5877468F321C205863CA09E /* Pods_esportemais.framework in Frameworks */,
+				10689158A338B10E9823C37F /* Pods_esportemais.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07563AA913C62CB02DD2356E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0EC8AFBCAF5D97C686A30FD /* Pods_esportemais.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1339D641226145D800236AA3 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +152,7 @@
 				13D24A46225E9C5700C45678 /* esportemais */,
 				13D24A45225E9C5700C45678 /* Products */,
 				E2A2477CC67A55BCCCF81D8D /* Pods */,
-				6BC971FAFDDB1C3B97FCD846 /* Frameworks */,
+				07563AA913C62CB02DD2356E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -179,19 +187,11 @@
 			path = Seeders;
 			sourceTree = "<group>";
 		};
-		6BC971FAFDDB1C3B97FCD846 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				18001186598FE094EA780771 /* Pods_esportemais.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E2A2477CC67A55BCCCF81D8D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DD88DC09563E0160840968D8 /* Pods-esportemais.debug.xcconfig */,
-				72A768A4F77B270F7C0287F3 /* Pods-esportemais.release.xcconfig */,
+				EA0F23D41BF76C91907FDFD8 /* Pods-esportemais.debug.xcconfig */,
+				0A80471733599C8154FCA55E /* Pods-esportemais.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -203,11 +203,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13D24A56225E9C5800C45678 /* Build configuration list for PBXNativeTarget "esportemais" */;
 			buildPhases = (
-				B60A81AD717B939CF596376D /* [CP] Check Pods Manifest.lock */,
+				915FAF84D668626A146732FB /* [CP] Check Pods Manifest.lock */,
 				13D24A40225E9C5700C45678 /* Sources */,
 				13D24A41225E9C5700C45678 /* Frameworks */,
 				13D24A42225E9C5700C45678 /* Resources */,
-				D15E286E35DC9B2DF32BDF01 /* [CP] Embed Pods Frameworks */,
+				A3964A91D234311C76E5AB34 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,7 +268,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B60A81AD717B939CF596376D /* [CP] Check Pods Manifest.lock */ = {
+		915FAF84D668626A146732FB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -290,7 +290,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D15E286E35DC9B2DF32BDF01 /* [CP] Embed Pods Frameworks */ = {
+		A3964A91D234311C76E5AB34 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -489,7 +489,7 @@
 		};
 		13D24A57225E9C5800C45678 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD88DC09563E0160840968D8 /* Pods-esportemais.debug.xcconfig */;
+			baseConfigurationReference = EA0F23D41BF76C91907FDFD8 /* Pods-esportemais.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -507,7 +507,7 @@
 		};
 		13D24A58225E9C5800C45678 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72A768A4F77B270F7C0287F3 /* Pods-esportemais.release.xcconfig */;
+			baseConfigurationReference = 0A80471733599C8154FCA55E /* Pods-esportemais.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -104,7 +104,7 @@ class EventosTableViewController: UITableViewController {
         
         let defaults = UserDefaults.standard
         let idUsuario = defaults.string(forKey: "idUsuario") ?? ""
-        var eventosInscritos = defaults.array(forKey: "eventos#\(idUsuario)") as! [String]
+        var eventosInscritos = defaults.array(forKey: "eventos#\(idUsuario)") as? [String] ?? [String]()
        
         let btnAcao = sender as! UIButton
         var btnTexto = ""

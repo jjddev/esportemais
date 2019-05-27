@@ -93,7 +93,7 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
             let defaults = UserDefaults.standard
             let idUsuario = defaults.string(forKey: "idUsuario") ?? ""
-            var eventosInscritos = defaults.stringArray(forKey: "eventos") as! [String]
+            var eventosInscritos = defaults.stringArray(forKey: "eventos#\(idUsuario)") as? [String] ?? [String]()
             
             
             let e = EventoService.newEvento(evento, idUsuario)
@@ -101,7 +101,7 @@ class EventosUIViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             EventoService.saveEventosCache(eventosInscritos)
             
             alert = FactoryAlert.infoDialog(title: "Sucesso", messaage: "Evento criado", buttonText: "OK")
-            print(defaults.stringArray(forKey: "eventos") as! [String])
+            //print(defaults.stringArray(forKey: "eventos") as! [String])
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.present(self.alert, animated: true)
