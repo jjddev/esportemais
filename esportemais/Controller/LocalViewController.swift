@@ -1,11 +1,3 @@
-//
-//  LocalViewController.swift
-//  esportemais
-//
-//  Created by PUCPR on 10/05/19.
-//  Copyright © 2019 PUCPR. All rights reserved.
-//
-
 import UIKit
 import MapKit
 import CoreLocation

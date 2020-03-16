@@ -1,11 +1,3 @@
-//
-//  Usuario.swift
-//  esportemais
-//
-//  Created by juliano jose dziadzio on 29/04/19.
-//  Copyright © 2019 PUCPR. All rights reserved.
-//
-
 import Foundation
 
 class Usuario: Modelble {

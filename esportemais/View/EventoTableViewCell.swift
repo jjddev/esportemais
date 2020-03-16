@@ -1,11 +1,3 @@
-//
-//  EventoTableViewCell.swift
-//  esportemais
-//
-//  Created by PUCPR on 15/05/19.
-//  Copyright © 2019 PUCPR. All rights reserved.
-//
-
 import UIKit
 
 class EventoTableViewCell: UITableViewCell {

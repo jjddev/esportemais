@@ -1,11 +1,3 @@
-//
-//  ModalBuilder.swift
-//  esportemais
-//
-//  Created by PUCPR on 12/04/19.
-//  Copyright © 2019 PUCPR. All rights reserved.
-//
-
 import Foundation
 import UIKit
 

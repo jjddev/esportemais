@@ -1,11 +1,3 @@
-//
-//  EventosUIViewController.swift
-//  esportemais
-//
-//  Created by juliano jose dziadzio on 14/05/19.
-//  Copyright © 2019 PUCPR. All rights reserved.
-//
-
 import UIKit
 import Firebase
 import SwiftyJSON

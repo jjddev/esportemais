@@ -1,11 +1,3 @@
-//
-//  FactoryAlert.swift
-//  esportemais
-//
-//  Created by PUCPR on 15/04/19.
-//  Copyright © 2019 PUCPR. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
